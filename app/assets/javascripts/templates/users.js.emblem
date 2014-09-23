@@ -1,0 +1,8 @@
+.container
+  .row.col-sm-3.list-group
+    each
+      link-to 'user' this classNames="list-group-item"
+        name
+
+  .col-sm-9
+    outlet

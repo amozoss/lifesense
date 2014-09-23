@@ -1,0 +1,7 @@
+.row.col-sm-7
+  h2
+    model.name
+
+  p 
+    ' Email:
+    model.email

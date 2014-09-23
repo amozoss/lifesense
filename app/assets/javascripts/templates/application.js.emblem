@@ -1,2 +1,15 @@
-h1 Hello World
-outlet
+header
+  .navbar.navbar-fixed-top.navbar-inverse
+    .container
+      link-to "users" id='logo' | LifeSense
+      nav
+        ul.nav.navbar-nav.pull-right
+          li = link-to "" | Home
+          li = link-to "" | Help
+          li = link-to "" | Log in
+      
+
+section#main
+  = outlet
+
+footer

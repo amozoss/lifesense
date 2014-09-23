@@ -1,0 +1,9 @@
+
+.center.jumbotron
+  h1 
+   | Welcome to LifeSense
+
+  h2
+    | This is where everything that is awesome happens.
+    
+  link-to "" class="btn btn-lg btn-primary" | Sign up
