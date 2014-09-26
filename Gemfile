@@ -8,6 +8,7 @@ gem 'ember-source'
 gem 'emblem-rails' # contains active_model_serializers
 gem 'ffaker'
 gem 'puma'
+gem 'bcrypt',      '3.1.7'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

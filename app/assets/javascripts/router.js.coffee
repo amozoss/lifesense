@@ -9,4 +9,5 @@ App.Router.map ()->
     @resource 'user', path: '/:id'
 
   @route 'home', path: '/'
+  @route 'help'
 

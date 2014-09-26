@@ -4,8 +4,9 @@ header
       link-to "users" id='logo' | LifeSense
       nav
         ul.nav.navbar-nav.pull-right
-          li = link-to "" | Home
-          li = link-to "" | Help
+          li = link-to "home" | Home
+          li = link-to "help" | Help
+          li = link-to "users" | Users
           li = link-to "" | Log in
       
 
