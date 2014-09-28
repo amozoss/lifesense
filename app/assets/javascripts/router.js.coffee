@@ -8,6 +8,10 @@ App.Router.map ()->
   @resource 'users', ->
     @resource 'user', path: '/:id'
 
+  @resource 'sessions', ->
+    @route 'logout'
+
   @route 'home', path: '/'
   @route 'help'
+  @route 'login'
 

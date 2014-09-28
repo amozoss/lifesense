@@ -21,6 +21,10 @@ class Api::V2::UsersController < ApplicationController
     respond_with user.destroy
   end
 
+  def token
+    respond_with User.first
+  end
+
   private
 
   def user
