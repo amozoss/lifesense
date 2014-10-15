@@ -6,5 +6,18 @@ class User < ActiveRecord::Base
             uniqueness: { case_sensitive: false}
 
   has_secure_password
-            
+
+  # Returns a random token.
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def User.authenticate_with_token(token)
+    User.find_by_token(token)
+  end 
+
+  def generate_token
+    return if self.token.present? 
+    update_attribute(:token, User.new_token)
+  end 
 end

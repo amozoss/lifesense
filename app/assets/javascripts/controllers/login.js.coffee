@@ -6,4 +6,3 @@ App.LoginController = Ember.Controller.extend
       console.log(data)
       Ember.$.post('/api/login', data).then((response)->
         console.log(response)
-        alert(response.user.email))

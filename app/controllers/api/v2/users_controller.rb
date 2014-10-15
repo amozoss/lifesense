@@ -1,5 +1,16 @@
 class Api::V2::UsersController < ApplicationController
   respond_to :json
+  before_action :authenticate, except: [:login]
+  skip_before_filter :verify_authenticity_token, only: [:login]
+
+  def login
+    count = 0
+    @current_user = User.find_by(email: params[:email].downcase) if params[:email]
+    if @current_user && @current_user.authenticate(params[:password]) || authenticate
+      @current_user.generate_token if @current_user
+      render status: :ok, json: @current_user 
+    end
+  end
 
   def index
     respond_with User.all
@@ -19,10 +30,6 @@ class Api::V2::UsersController < ApplicationController
 
   def destroy
     respond_with user.destroy
-  end
-
-  def token
-    respond_with User.first
   end
 
   private
