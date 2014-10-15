@@ -1,4 +1,7 @@
 .container 
+  if errorMessage
+    .alert.bg-danger
+       errorMessage
   h1 
     | Log in
   .row

@@ -1,7 +1,7 @@
 class Api::V2::UsersController < ApplicationController
   respond_to :json
   before_action :authenticate, except: [:login]
-  skip_before_filter :verify_authenticity_token, only: [:login]
+  #skip_before_filter :verify_authenticity_token, only: [:login]
 
   def login
     count = 0

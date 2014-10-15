@@ -8,4 +8,10 @@ DS.RESTAdapter.reopen
 
 # Override the default adapter with the `DS.ActiveModelAdapter` which
 # is built to work nicely with the ActiveModel::Serializers gem.
-App.ApplicationAdapter = DS.ActiveModelAdapter.extend()
+App.ApplicationAdapter = DS.ActiveModelAdapter.extend
+  headers: (->
+    {
+      "Authorization": "Token token=" + App.get('token')
+    }).property('App.token')
+
+

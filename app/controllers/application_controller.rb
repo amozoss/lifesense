@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   def authenticate 
     # halts with 401
     authenticate_or_request_with_http_token do |token, options|
+      puts "******************************#{token}"
       @current_user = User.authenticate_with_token(token)
       return @current_user if @current_user && token == @current_user.token
     end
