@@ -4,13 +4,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def authenticate 
+    # halts with 401
     authenticate_or_request_with_http_token do |token, options|
       @current_user = User.authenticate_with_token(token)
       return @current_user if @current_user && token == @current_user.token
     end
-    # return a boolean, but still send unauthorized
-    head :unauthorized
-    return false 
   end
 
+  def authenticate_token
+    #returns a boolean
+    authenticate_with_http_token do |token, options|
+      @current_user = User.authenticate_with_token(token)
+      token == @current_user.token if @current_user
+    end
+  end
 end

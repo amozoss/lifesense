@@ -6,9 +6,11 @@ class Api::V2::UsersController < ApplicationController
   def login
     count = 0
     @current_user = User.find_by(email: params[:email].downcase) if params[:email]
-    if @current_user && @current_user.authenticate(params[:password]) || authenticate
+    if @current_user && @current_user.authenticate(params[:password]) || authenticate_token
       @current_user.generate_token if @current_user
       render status: :ok, json: @current_user 
+    else
+      head :unauthorized
     end
   end
 

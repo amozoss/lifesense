@@ -19,7 +19,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test 'login with valid token' do
-    post '/api/login', {}, { 'Authorization' => "Token token=#{users(:joe).token}"}
+    post '/api/login', {}, { 'Authorization' => token_header(users(:joe).token)}
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
     assert_json(response.body) do
