@@ -10,7 +10,7 @@ class Api::V2::UsersController < ApplicationController
       @current_user.generate_token if @current_user
       render status: :ok, json: @current_user 
     else
-      head :unauthorized
+      render status: :unauthorized, json: 'Invalid username/password'
     end
   end
 

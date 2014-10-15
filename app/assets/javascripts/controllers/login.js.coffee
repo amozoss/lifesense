@@ -20,9 +20,7 @@ App.LoginController = Ember.Controller.extend
         self.set('errorMessage', null)
         self.transitionToRoute('users')
       , (value) -> 
-        console.log("login 401")
-        console.log(value)
-        self.set('errorMessage', value.statusText)
+        self.set('errorMessage', value.responseText)
       )
 
 
