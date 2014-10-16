@@ -1,4 +1,3 @@
-
 App.LoginController = Ember.Controller.extend
   reset: ->
     @setProperties({
