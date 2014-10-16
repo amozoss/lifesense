@@ -1,10 +1,11 @@
 class Api::V2::UsersController < ApplicationController
   respond_to :json
   before_action :authenticate, except: [:login]
-  #skip_before_filter :verify_authenticity_token, only: [:login]
+  skip_before_filter :verify_authenticity_token
+
+  
 
   def login
-    count = 0
     @current_user = User.find_by(email: params[:email].downcase) if params[:email]
     if @current_user && @current_user.authenticate(params[:password]) || authenticate_token
       @current_user.generate_token if @current_user
@@ -12,6 +13,10 @@ class Api::V2::UsersController < ApplicationController
     else
       render status: :unauthorized, json: 'Invalid username/password'
     end
+  end
+
+  def current_user
+    @current_user
   end
 
   def index
