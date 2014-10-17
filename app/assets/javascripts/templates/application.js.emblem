@@ -1,21 +1,28 @@
-header
-  .navbar.navbar-fixed-top.navbar-inverse
+header.navbar.navbar-fixed-top.navbar-inverse
+  meta name="viewport" content="width=device-width, initial-scale=1, maxium-scale=1"
     .container
-      link-to "users" id='logo' | LifeSense
-      nav
-        ul.nav.navbar-nav.pull-right
-          link-to "home" tagName="li" 
-            a Home
-          link-to "help" tagName="li" 
-            a Help
-          if isAuthenicated
-            link-to "users" tagName="li" 
-              a Users
-            li
-              a click="logout" Logout
-          else
-            link-to "login" tagName="li" 
-              a Log in
+      .navbar-header
+        button.navbar-toggle data-target=".bs-navbar-collapse" data-toggle="collapse" type="button"
+          span.sr-only Toggle Navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        link-to "users" id='logo' | LifeSense
+      .collapse.navbar-collapse.bs-navbar-collapse
+        nav
+          ul.nav.navbar-nav.navbar-right
+            link-to "home" tagName="li" 
+              a Home
+            link-to "help" tagName="li" 
+              a Help
+            if isAuthenicated
+              link-to "users" tagName="li" 
+                a Users
+              li
+                a click="logout" Logout
+            else
+              link-to "login" tagName="li" 
+                a Log in
       
 
 section#main
