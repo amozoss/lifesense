@@ -11,8 +11,8 @@ header
           if isAuthenicated
             link-to "users" tagName="li" 
               a Users
-            link-to "logout" tagName="li" 
-              a Logout
+            li
+              a click="logout" Logout
           else
             link-to "login" tagName="li" 
               a Log in
