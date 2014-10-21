@@ -4,5 +4,7 @@
       link-to 'user' this classNames="list-group-item"
         name
 
+
   .col-sm-9
+      
     outlet
