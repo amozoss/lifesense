@@ -1,8 +1,3 @@
-App.UsersRoute = Ember.Route.extend
+App.UsersRoute = App.AuthenticatedRoute.extend
   model: -> @store.find 'user'
 
-  actions:
-    error: (error, transition) ->
-      if (error.status is 401)
-        @transitionTo('login')
-        console.log("users 401")

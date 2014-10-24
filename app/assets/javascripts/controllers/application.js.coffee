@@ -1,10 +1,13 @@
 App.ApplicationController = Ember.Controller.extend
-  isAuthenicated: (->
-    !Ember.isEmpty(App.get('token'))
-  ).property('App.token')
+  needs: ['login'],
 
-  actions:
-    logout: ()->
-      App.set('token', null)
-      @transitionToRoute('login')
+  isAuthenicated: (->
+    console.log(@get('controllers.login.token'))
+    console.log(Ember.isEmpty(@get('controllers.login.token')))
+    isNull = @get('controllers.login.token') == undefined
+    console.log("Hello " + isNull)
+    not Ember.isEmpty(@get('controllers.login.token'))
+    #@get('controllers.login.token') is not null
+  ).property('controllers.login.token')
+
 
