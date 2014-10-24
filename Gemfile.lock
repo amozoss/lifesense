@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.1.6)
       actionpack (= 4.1.6)
@@ -102,6 +103,33 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.6)
       sprockets-rails (~> 2.0)
+    rails-assets-bootstrap-sass-official (3.2.0.2)
+      rails-assets-jquery (>= 1.9.0)
+    rails-assets-ef4--liquid-fire (0.12.0)
+      rails-assets-bootstrap-sass-official (~> 3.2.0)
+      rails-assets-ember (> 1.5.0.beta.3)
+      rails-assets-ember-resolver (~> 0.1.7)
+      rails-assets-handlebars (~> 1.3.0)
+      rails-assets-jquery (>= 1.11.1, < 2)
+      rails-assets-moment (~> 2.7.0)
+      rails-assets-rwjblue--ember-cli-test-loader (= 0.0.4)
+      rails-assets-stefanpenner--ember-cli-shims (= 0.0.3)
+      rails-assets-stefanpenner--ember-load-initializers (= 0.0.2)
+      rails-assets-stefanpenner--loader.js (= 1.0.1)
+    rails-assets-ember (1.8.0.beta.4)
+      rails-assets-handlebars (>= 1.0.0, < 2.0.0)
+      rails-assets-jquery (>= 1.7.0, < 2.2.0)
+    rails-assets-ember-resolver (0.1.8)
+      rails-assets-ember (> 1.5.0.beta.3)
+    rails-assets-handlebars (1.3.0)
+    rails-assets-jquery (1.11.1)
+    rails-assets-moment (2.7.0)
+    rails-assets-rwjblue--ember-cli-test-loader (0.0.4)
+    rails-assets-stefanpenner--ember-cli-shims (0.0.3)
+      rails-assets-ember (> 1.5.0.beta.3)
+    rails-assets-stefanpenner--ember-load-initializers (0.0.2)
+      rails-assets-ember (> 1.5.0.beta.3)
+    rails-assets-stefanpenner--loader.js (1.0.1)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -166,6 +194,7 @@ DEPENDENCIES
   pg (= 0.17.1)
   puma
   rails (= 4.1.6)
+  rails-assets-ef4--liquid-fire
   rails_12factor (= 0.0.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

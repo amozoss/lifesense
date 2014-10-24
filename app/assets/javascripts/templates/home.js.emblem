@@ -2,6 +2,8 @@
   h1 
    | Welcome to LifeSense
 
+  h2.visible-xs-block Hello Desktop
+
   h2
     | This is where everything that is awesome happens.
     

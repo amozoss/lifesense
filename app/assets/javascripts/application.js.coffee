@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require bootstrap
 #= require handlebars
+#= require liquid-fire
 #= require ember
 #= require ember-data
 #= require_self
