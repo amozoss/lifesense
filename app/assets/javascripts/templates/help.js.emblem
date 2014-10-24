@@ -1,3 +1,5 @@
-.center.jumbotron
+.container.center.jumbotron
   h1 
-   | Help
+    | Help
+  p 
+    | Here is where you get help for things.

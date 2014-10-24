@@ -1,7 +1,6 @@
-.row.col-sm-7
-  h2.center
-    model.name
+h3.center
+  model.name
 
-  p 
-    ' Email:
-    model.email
+p 
+  ' Email:
+  model.email

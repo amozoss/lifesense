@@ -1,10 +1,13 @@
+h1
+  | Users
 .container
-  .row.col-sm-3.list-group
-    collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
-      link-to 'user' this classNames="list-group-item"
-        name
+  .row
+    .col-sm-4.list-group
+      collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
+        link-to 'user' this classNames="list-group-item"
+          name
 
 
-  .col-sm-9
-      
-    outlet
+    .col-sm-8
+        
+      outlet

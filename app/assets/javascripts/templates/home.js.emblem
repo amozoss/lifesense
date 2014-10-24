@@ -1,6 +1,6 @@
-.center.jumbotron
+.jumbotron.container.center
   h1 
-   | Welcome to LifeSense
+    | Welcome to LifeSense
 
   h2.visible-xs-block Hello Desktop
 
