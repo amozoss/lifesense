@@ -2,9 +2,8 @@ App.LoginController = Ember.Controller.extend
   init: ->
     @_super()
     if localStorage.token
-      console.log("login setup")
       Ember.$.ajaxSetup
-        headers: { 'Authorization': 'Token token=' + localStorage.token }
+        headers: { 'Authorization': 'Token token=' + Ember.$.cookie('access_token') }
 
   reset: ->
     @setProperties({
@@ -13,16 +12,20 @@ App.LoginController = Ember.Controller.extend
       errorMessage: null,
     })
 
+  attemptedTransition: null 
+
   resetToken: ->
     @set('token', null)
+    Ember.$.ajaxSetup
+      headers: { 'Authorization': 'Token token=' }
 
-  token: localStorage.token
+  token: Ember.$.cookie('access_token')
 
   tokenChanged: (->
-    console.log("Token changed")
-    localStorage.token = @get('token')
-    Ember.$.ajaxSetup
-      headers: { 'Authorization': 'Token token=' + @get('token') }
+    if Ember.isEmpty(@get('token'))
+      Ember.$.removeCookie('access_token')
+    else
+      Ember.$.cookie('access_token', @get('token'))
   ).observes('token')
 
 
@@ -34,20 +37,19 @@ App.LoginController = Ember.Controller.extend
       self.set('errorMessage', null)
 
       Ember.$.post('/api/login', data).then((response)->
-        console.log(response)
-        self.set('token', response.user.token)
         Ember.$.ajaxSetup
           headers: { 'Authorization': 'Token token=' + response.user.token }
+        console.log(response)
+        self.set('token', response.user.token)
         self.set('errorMessage', null)
         attemptedTransition = self.get('attemptedTransition')
 
         if (attemptedTransition) 
-          console.log("redirecting")
-          console.log(attemptedTransition)
           self.transitionToRoute(attemptedTransition.targetName)
           self.set('attemptedTransition', null)
         else
           self.transitionToRoute('users')
+
       , (value) -> 
         self.set('errorMessage', value.responseText)
       )

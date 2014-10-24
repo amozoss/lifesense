@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #Assets
 gem 'rails-assets-ef4--liquid-fire'
+gem 'rails-assets-jquery.cookie'
+gem 'rails-assets-ember-localstorage-adapter'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do

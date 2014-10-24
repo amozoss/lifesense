@@ -9,9 +9,7 @@ DS.RESTAdapter.reopen
 # Override the default adapter with the `DS.ActiveModelAdapter` which
 # is built to work nicely with the ActiveModel::Serializers gem.
 #App.ApplicationAdapter = DS.ActiveModelAdapter.extend
-#headers: (->
-#{
-#"Authorization": "Token token=" + localStorage.token # App.get('token')
-#})
 
+App.ApiKeyAdapter = DS.LSAdapter.extend
+  namespace: 'lifesense-keys'
 
