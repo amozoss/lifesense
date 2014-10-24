@@ -6,6 +6,7 @@
 #= require ember-data
 #= require ember-localstorage-adapter
 #= require jquery.cookie
+#= require ember-list-view
 #= require_self
 #= require app
 

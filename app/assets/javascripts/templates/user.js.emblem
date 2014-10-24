@@ -1,5 +1,5 @@
 .row.col-sm-7
-  h2
+  h2.center
     model.name
 
   p 
