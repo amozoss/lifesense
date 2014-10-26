@@ -11,6 +11,7 @@ User.create!(name:  "dan",
              email: "dan@dan.com",
              password:              "dandan",
              password_confirmation: "dandan", 
+             admin: true,
              token: User.new_token)
 
 20.times do |n|

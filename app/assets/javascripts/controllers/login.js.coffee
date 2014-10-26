@@ -16,17 +16,21 @@ App.LoginController = Ember.Controller.extend
 
   resetToken: ->
     @set('token', null)
+    @set('currentUser', null)
     Ember.$.ajaxSetup
       headers: { 'Authorization': 'Token token=' }
 
   token: Ember.$.cookie('access_token')
+  currentUser: Ember.$.cookie('auth_user')
 
   tokenChanged: (->
     if Ember.isEmpty(@get('token'))
       Ember.$.removeCookie('access_token')
+      Ember.$.removeCookie('auth_user')
     else
       Ember.$.cookie('access_token', @get('token'))
-  ).observes('token')
+      Ember.$.cookie('auth_user', @get('currentUser'))
+  ).observes('token', 'currentUser')
 
 
   actions:
@@ -41,6 +45,7 @@ App.LoginController = Ember.Controller.extend
           headers: { 'Authorization': 'Token token=' + response.user.token }
         console.log(response)
         self.set('token', response.user.token)
+        self.set('currentUser', response.user)
         self.set('errorMessage', null)
         attemptedTransition = self.get('attemptedTransition')
 

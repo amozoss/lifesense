@@ -1,7 +1,8 @@
 class Api::V2::UsersController < ApplicationController
   respond_to :json
   before_action :authenticate, except: [:login, :create]
-  skip_before_filter :verify_authenticity_token
+  before_action :admin_user, only: :destroy
+  #skip_before_filter :verify_authenticity_token
 
   
 
@@ -47,6 +48,10 @@ class Api::V2::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :token)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def admin_user
+    render status: :unauthorized, json: 'Not authorized to do that!' unless @current_user && @current_user.admin?
   end
 end
