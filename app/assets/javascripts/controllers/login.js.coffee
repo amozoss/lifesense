@@ -1,7 +1,7 @@
 App.LoginController = Ember.Controller.extend
   init: ->
     @_super()
-    if localStorage.token
+    if Ember.$.cookie('access_token')
       Ember.$.ajaxSetup
         headers: { 'Authorization': 'Token token=' + Ember.$.cookie('access_token') }
 
