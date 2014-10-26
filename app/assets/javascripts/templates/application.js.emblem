@@ -11,13 +11,19 @@ header.navbar.navbar-fixed-top.navbar-inverse
       .collapse.navbar-collapse.bs-navbar-collapse
         nav
           ul.nav.navbar-nav.navbar-right
-            link-to "home" tagName="li" 
-              a Home
-            link-to "help" tagName="li" 
-              a Help
-            if isAuthenicated
+            if isAuthenticated
+              link-to "home" tagName="li" 
+                a Sensors
+              link-to "home" tagName="li" 
+                a Transmitters
               link-to "users" tagName="li" 
                 a Users
+            else 
+              link-to "home" tagName="li" 
+                a Home
+            link-to "help" tagName="li" 
+              a Help
+            if isAuthenticated
               li
                 a click="logout" Logout
             else

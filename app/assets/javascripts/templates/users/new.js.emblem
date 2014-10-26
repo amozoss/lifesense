@@ -1,0 +1,18 @@
+h1 New User
+
+form 
+  fieldset
+    dl
+      dt: label Name:
+      dd: view Ember.TextField value=name
+    dl
+      dt: label Email:
+      dd: view Ember.TextField value=email
+    dl
+      dt: label Password:
+      dd: view Ember.TextField type="password" value=password
+    dl
+      dt: label Password Confirmation:
+      dd: view Ember.TextField type="password" value=password_confirmation
+    fieldset.actions
+      input.btn.btn-lg.btn-primary type='submit' value='Create User' click='createUser'

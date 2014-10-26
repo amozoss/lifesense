@@ -1,6 +1,6 @@
 class Api::V2::UsersController < ApplicationController
   respond_to :json
-  before_action :authenticate, except: [:login]
+  before_action :authenticate, except: [:login, :create]
   skip_before_filter :verify_authenticity_token
 
   
@@ -28,7 +28,8 @@ class Api::V2::UsersController < ApplicationController
   end
 
   def create
-    respond_with :api, User.create(user_params)
+    @current_user = User.create(user_params)
+    respond_with :api, @current_user
   end
 
   def update
@@ -46,6 +47,6 @@ class Api::V2::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :token)
   end
 end

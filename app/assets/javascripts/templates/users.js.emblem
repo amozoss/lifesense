@@ -4,10 +4,7 @@ h1
   .row
     .col-sm-4.list-group
       collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
-        link-to 'user' this classNames="list-group-item"
+        link-to 'user' content classNames="list-group-item"
           name
-
-
     .col-sm-8
-        
       outlet

@@ -4,3 +4,8 @@ h3.center
 p 
   ' Email:
   model.email
+
+.row
+  p
+    link-to 'users.new' |  New user
+    a href="#" click="delete"   delete

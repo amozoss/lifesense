@@ -6,12 +6,15 @@ App.Router.reopen
 
 App.Router.map ()->
   @resource 'users', ->
+    @route 'new'
     @resource 'user', path: '/:id'
+      #@resource 'sensors', ->
+      #  @resource '', path: '/:id', ->
 
-  @resource 'sessions'
+
 
   @route 'home', path: '/'
   @route 'help'
   @route 'login'
-  @route 'logout'
+  @route 'signup'
 

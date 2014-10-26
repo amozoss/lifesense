@@ -1,7 +1,7 @@
 App.ApplicationController = Ember.Controller.extend
   needs: ['login'],
 
-  isAuthenicated: (->
+  isAuthenticated: (->
     !Ember.isEmpty(@get('controllers.login.token'))
   ).property('controllers.login.token')
 
