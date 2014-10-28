@@ -6,7 +6,6 @@ App.ApplicationController = Ember.Controller.extend
   ).property('controllers.login.token')
 
   currentUser: (->
-    console.log(@get('controllers.login.currentUser'))
     @get('controllers.login.currentUser').user
   ).property('controllers.login.currentUser')
 

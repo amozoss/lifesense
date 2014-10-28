@@ -1,3 +1,6 @@
 App.UserRoute = Ember.Route.extend
   model: (params) -> 
-    @store.find 'user', params.id
+    console.log(Ember.$.cookie('auth_user'))
+    user = Ember.$.cookie('auth_user')
+    return @store.find('user', user.id)
+    

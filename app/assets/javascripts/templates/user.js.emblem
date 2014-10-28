@@ -1,16 +1,13 @@
-.container
-  h3.center
-    model.name
+.jumbotron.container
+  h3
+    name
 
   p 
     ' Email:
-    model.email
+    email
+
+  ul
+    each transmitter in model.transmitters
+      li= transmitter.name
 
     
-outlet
-
-if isAdmin
-  .row
-    p
-      link-to 'users.new' |  New user
-      a href="#" click="delete"   delete

@@ -1,5 +1,2 @@
 h1
   | Transmitters
-ul
-  each
-    li= name
