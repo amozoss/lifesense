@@ -8,9 +8,7 @@ App.UsersNewController = Ember.Controller.extend
         'password',
         'password_confirmation'
       )
-      console.log(data)
       user = @store.createRecord 'user', data
-      console.log(user)
       user.save().then =>
         @setProperties
           name: null,

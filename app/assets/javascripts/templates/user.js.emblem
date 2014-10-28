@@ -1,9 +1,13 @@
-h3.center
-  model.name
+.container
+  h3.center
+    model.name
 
-p 
-  ' Email:
-  model.email
+  p 
+    ' Email:
+    model.email
+
+    
+outlet
 
 if isAdmin
   .row

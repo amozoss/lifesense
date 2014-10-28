@@ -5,3 +5,9 @@ joe:
   password_digest: <%= BCrypt::Password.create("joejoe") %>
   token: <%= User.new_token %>
 
+dan:
+  name: dan
+  email: dan@dan.com
+  password_digest: <%= BCrypt::Password.create("dandan") %>
+  token: <%= User.new_token %>
+

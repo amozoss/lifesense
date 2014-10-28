@@ -49,4 +49,12 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_not duplicate_user.valid?
   end
+
+  test "associated transmitters should be destroyed" do
+    @user.save
+    @user.transmitters.create!(name: "LifeSense")
+    assert_difference 'Transmitter.count', -1 do
+      @user.destroy
+    end
+  end
 end

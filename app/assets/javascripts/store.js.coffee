@@ -8,7 +8,13 @@ DS.RESTAdapter.reopen
 
 # Override the default adapter with the `DS.ActiveModelAdapter` which
 # is built to work nicely with the ActiveModel::Serializers gem.
-#App.ApplicationAdapter = DS.ActiveModelAdapter.extend
+App.ApplicationAdapter = DS.ActiveModelAdapter.extend()
+
+App.UserSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
+  attrs: {
+    transmitters: { embedded: 'always' }
+  }
+})
 
 App.ApiKeyAdapter = DS.LSAdapter.extend
   namespace: 'lifesense-keys'

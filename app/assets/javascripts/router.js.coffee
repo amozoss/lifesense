@@ -6,8 +6,13 @@ App.Router.reopen
 
 App.Router.map ()->
   @resource 'users', ->
+    @resource 'user', path: '/:id', ->
+      @resource 'transmitters'
     @route 'new'
-    @resource 'user', path: '/:id'
+
+
+  #/@resource 'user', path: 'users/:id', ->
+  #  @resource 'transmitters'
       #@resource 'sensors', ->
       #  @resource '', path: '/:id', ->
 

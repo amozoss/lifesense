@@ -45,7 +45,13 @@ App.LoginController = Ember.Controller.extend
           headers: { 'Authorization': 'Token token=' + response.user.token }
         console.log(response)
         self.set('token', response.user.token)
+        # only save important stuff
         self.set('currentUser', response.user)
+          #user: {
+          #admin: response.user.admin,
+          #id: response.user.id
+          #}
+        #)
         self.set('errorMessage', null)
         attemptedTransition = self.get('attemptedTransition')
 
