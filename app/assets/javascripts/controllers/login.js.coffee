@@ -46,12 +46,11 @@ App.LoginController = Ember.Controller.extend
         console.log(response)
         self.set('token', response.user.token)
         # only save important stuff
-        self.set('currentUser', response.user)
-          #user: {
-          #admin: response.user.admin,
-          #id: response.user.id
-          #}
-        #)
+        self.set('currentUser', 
+          {
+            admin: response.user.admin,
+            id: response.user.id
+          })
         self.set('errorMessage', null)
         attemptedTransition = self.get('attemptedTransition')
 
@@ -59,7 +58,7 @@ App.LoginController = Ember.Controller.extend
           self.transitionToRoute(attemptedTransition.targetName)
           self.set('attemptedTransition', null)
         else
-          self.transitionToRoute('user', 'transmitters')
+          self.transitionToRoute('user.transmitters')
 
       , (value) -> 
         self.set('errorMessage', value.responseText)

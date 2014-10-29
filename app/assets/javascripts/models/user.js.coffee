@@ -5,5 +5,5 @@ App.User = DS.Model.extend
   admin: DS.attr('boolean')
   password: DS.attr('string')
   password_confirmation: DS.attr('string')
-  transmitters: DS.hasMany('transmitter', {aysnc: true})
+  transmitters: DS.hasMany('transmitter', {async: true})
 

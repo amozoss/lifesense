@@ -7,14 +7,14 @@ header.navbar.navbar-fixed-top.navbar-inverse
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        link-to "users" id='logo' | LifeSense
+        link-to "user" id='logo' | LifeSense
       .collapse.navbar-collapse.bs-navbar-collapse
         nav
           ul.nav.navbar-nav.navbar-right
             if isAuthenticated
               link-to "home" tagName="li" 
                 a Sensors
-              link-to "user" 'transmitters' tagName="li" 
+              link-to "user.transmitters" tagName="li" 
                 a Transmitters
             else 
               link-to "home" tagName="li" 
