@@ -1,6 +1,5 @@
-h1 
+h1
   | Transmitters
-
 .row
   .col-sm-4.list-group
     collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
