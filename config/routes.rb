@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
     end
     scope module: :v2, constraints: ApiConstraint.new(version: 2, default: :true) do
-      resources :users
-      resources :transmitters,  only: [:create, :destroy]
+      resources :users do
+        resources :transmitters
+      end
       post 'login'  => 'users#login'
       post 'signup'  => 'users#create'
     end

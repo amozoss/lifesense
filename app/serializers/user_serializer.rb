@@ -1,7 +1,7 @@
 
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :admin
-
+  attributes :id, :name, :email, :admin #, :links
+  
   has_many :transmitters
 
   def attributes
@@ -10,4 +10,8 @@ class UserSerializer < ActiveModel::Serializer
     data[:token] = object.token if scope.id == object.id
     data
   end
+
+  #def links
+    #{ transmitters: "/api/users/#{object.id}/transmitters" }
+  #end
 end

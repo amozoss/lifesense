@@ -1,5 +1,7 @@
 h1
   | Transmitters
+
+link-to "user.transmitters.new" | New Transmitter
 .row
   .col-sm-4.list-group
     collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
