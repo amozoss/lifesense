@@ -30,7 +30,7 @@ users = User.order(:created_at).take(6)
 5.times do
     users.each do |user|
       name = Faker::Company.name
-      token = User.new_token
+      token = Transmitter.new_token
       user.transmitters.create!(name: name, transmitter_token: token)
     end
 end

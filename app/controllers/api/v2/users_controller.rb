@@ -2,7 +2,7 @@ class Api::V2::UsersController < ApplicationController
   respond_to :json
   before_action :authenticate, except: [:login, :create]
   before_action :admin_user, only: :destroy
-  skip_before_filter :verify_authenticity_token
+  #skip_before_filter :verify_authenticity_token
 
   
 
