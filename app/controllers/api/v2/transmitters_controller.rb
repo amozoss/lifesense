@@ -1,9 +1,11 @@
 class Api::V2::TransmittersController < ApplicationController
   respond_to :json
+  before_action :authenticate
+  skip_before_filter :verify_authenticity_token
 
   def index
     puts params
-    respond_with User.find_by(id: params[:user_id]).transmitters
+    respond_with @current_user.transmitters
   end
 
   def show
@@ -11,16 +13,24 @@ class Api::V2::TransmittersController < ApplicationController
   end
 
   def create
-    puts params
+    @transmitter = @current_user.transmitters.create!(name: transmitter_params["name"], transmitter_token: User.new_token, user_id: @current_user.id)
+    
+    respond_with :api, json: { transmitter:@transmitter}
+
   end
 
   def destroy
+    respond_with transmitter.destroy
   end
 
   private 
 
   def transmitter
     Transmitter.find(params[:id])
+  end
+
+  def transmitter_params
+    params.require(:transmitter).permit(:name, :user_id, :transmitter_token)
   end
 
 

@@ -14,7 +14,7 @@ header.navbar.navbar-fixed-top.navbar-inverse
             if isAuthenticated
               link-to "user.sensors" tagName="li" 
                 a Sensors
-              link-to "user.transmitters" tagName="li" 
+              link-to "transmitters" tagName="li" 
                 a Transmitters
             else 
               link-to "home" tagName="li" 

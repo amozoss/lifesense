@@ -1,0 +1,7 @@
+h3
+  model.name
+  
+p
+  | Token: #{model.transmitter_token}
+
+a.delete click="delete" delete
