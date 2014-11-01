@@ -25,6 +25,5 @@ App.TransmittersNewController = Ember.Controller.extend
         @setProperties
           name: null,
         self.transitionToRoute "transmitters.transmitter", transmitter
-      #transmitter.commit
 
 
