@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027215055) do
+ActiveRecord::Schema.define(version: 20141105201014) do
+
+  create_table "sensors", force: true do |t|
+    t.string   "name"
+    t.integer  "pin_number"
+    t.string   "formula"
+    t.integer  "user_id"
+    t.integer  "transmitter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sensors", ["transmitter_id"], name: "index_sensors_on_transmitter_id"
+  add_index "sensors", ["user_id", "transmitter_id"], name: "index_sensors_on_user_id_and_transmitter_id"
+  add_index "sensors", ["user_id"], name: "index_sensors_on_user_id"
 
   create_table "transmitters", force: true do |t|
     t.string   "name"

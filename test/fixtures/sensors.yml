@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  pin_number: 1
+  formula: MyString
+  user_id: 
+
+two:
+  name: MyString
+  pin_number: 2
+  formula: MyString
+  user_id: 

@@ -50,6 +50,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?
   end
 
+	test "associated sensors should be destroyed" do
+		@user.save
+		@user.sensors.create!(name: "sensor 1")
+		assert_difference 'Sensor.count', -1 do
+			@user.destroy
+		end
+	end
+
   test "associated transmitters should be destroyed" do
     @user.save
     @user.transmitters.create!(name: "LifeSense")
@@ -57,4 +65,5 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
 end

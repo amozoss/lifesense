@@ -34,3 +34,14 @@ users = User.order(:created_at).take(6)
       user.transmitters.create!(name: name, transmitter_token: token)
     end
 end
+
+count = 0
+5.times do
+    users.each do |user|
+      name = Faker::Color.name
+      pin = count 
+      count += 1
+			formula = Faker::Education.degree
+      user.sensors.create!(name: name, pin_number: pin, formula: formula)
+    end
+end

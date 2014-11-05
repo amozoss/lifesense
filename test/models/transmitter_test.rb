@@ -20,8 +20,8 @@ class TransmitterTest < ActiveSupport::TestCase
     assert_not @transmitter.valid?
   end
 
-  test "name should be at most 80 characters" do
-    @transmitter.name = "a" * 81
+  test "name should be at most 40 characters" do
+    @transmitter.name = "a" * 41
     assert_not @transmitter.valid?
   end
 end

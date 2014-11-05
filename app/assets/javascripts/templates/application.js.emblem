@@ -12,7 +12,7 @@ header.navbar.navbar-fixed-top.navbar-inverse
         nav
           ul.nav.navbar-nav.navbar-right
             if isAuthenticated
-              link-to "user.sensors" tagName="li" 
+              link-to "sensors" tagName="li" 
                 a Sensors
               link-to "transmitters" tagName="li" 
                 a Transmitters
