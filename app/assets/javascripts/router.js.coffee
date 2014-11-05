@@ -5,14 +5,16 @@ App.Router.reopen
   #rootURL: '/'
 
 App.Router.map ()->
-  @resource 'user', path: '', ->
-    @resource 'transmitters', ->
-      @route 'transmitter', path: "/:transmitter_id"
-      @route 'new'
-    @route 'sensors'
-
   @route 'home', path: '/'
   @route 'help'
   @route 'login'
   @route 'signup'
+
+  @resource 'user', path: '', ->
+			@resource 'transmitters', ->
+				@route 'transmitter', path: "/:transmitter_id"
+				@route 'new'
+			@resource 'sensors', ->
+				@route 'new'
+				@route 'sensor', path: "/:sensor_id"
 

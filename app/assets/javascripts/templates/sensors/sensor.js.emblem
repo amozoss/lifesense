@@ -1,0 +1,9 @@
+h3
+  model.name
+  
+p
+  | Pin: #{model.pin_number}
+p
+  | Formula: #{model.formula}
+
+a.delete click="delete" delete

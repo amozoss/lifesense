@@ -2,7 +2,7 @@ class CreateSensors < ActiveRecord::Migration
   def change
     create_table :sensors do |t|
       t.string :name
-      t.integer :pin
+      t.integer :pin_number
       t.string :formula
       t.references :user, index: true
 			t.references :transmitter, index: true

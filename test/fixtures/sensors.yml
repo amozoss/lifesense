@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  pin: 1
+  pin_number: 1
   formula: MyString
   user_id: 
 
 two:
   name: MyString
-  pin: 2
+  pin_number: 2
   formula: MyString
   user_id: 

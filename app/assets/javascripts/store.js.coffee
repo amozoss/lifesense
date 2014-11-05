@@ -13,6 +13,7 @@ App.ApplicationAdapter = DS.ActiveModelAdapter.extend()
 App.UserSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
     transmitters: { embedded: 'always' }
+    sensors: { embedded: 'always' }
   }
 })
 

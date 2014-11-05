@@ -35,11 +35,13 @@ users = User.order(:created_at).take(6)
     end
 end
 
+count = 0
 5.times do
     users.each do |user|
       name = Faker::Color.name
-      pin = rand(9)
+      pin = count 
+      count += 1
 			formula = Faker::Education.degree
-      user.sensors.create!(name: name, pin: pin, formula: formula)
+      user.sensors.create!(name: name, pin_number: pin, formula: formula)
     end
 end

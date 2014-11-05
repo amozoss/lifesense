@@ -6,4 +6,5 @@ App.User = DS.Model.extend
   password: DS.attr('string')
   password_confirmation: DS.attr('string')
   transmitters: DS.hasMany('transmitter', {async: true})
+  sensors: DS.hasMany('sensors', {async: true})
 

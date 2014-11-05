@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20141105201014) do
 
   create_table "sensors", force: true do |t|
     t.string   "name"
-    t.integer  "pin"
+    t.integer  "pin_number"
     t.string   "formula"
     t.integer  "user_id"
     t.integer  "transmitter_id"
