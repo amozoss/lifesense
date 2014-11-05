@@ -6,6 +6,9 @@ form
       dt: label Name:
       dd: view Ember.TextField value=name
     dl
+      dt: label Pin:
+      dd: view Ember.TextField type="number" value=pin_number
+    dl
       dt: label Formula:
       dd: view Ember.TextField value=formula
     fieldset.actions

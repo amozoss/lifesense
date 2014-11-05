@@ -13,7 +13,9 @@ class Api::V2::TransmittersController < ApplicationController
   end
 
   def create
-    @transmitter = @current_user.transmitters.create!(name: transmitter_params["name"], transmitter_token: Transmitter.new_token, user_id: @current_user.id)
+		# TODO send error messages
+    @transmitter = @current_user.transmitters.build(name: transmitter_params["name"], transmitter_token: Transmitter.new_token)
+		@transmitter.save
     
     respond_with :api, status: :created, json: @transmitter
   end
@@ -25,7 +27,7 @@ class Api::V2::TransmittersController < ApplicationController
   private 
 
   def transmitter
-    Transmitter.find(params[:id])
+    @current_user.transmitters.find(params[:id]) if @current_user
   end
 
   def transmitter_params

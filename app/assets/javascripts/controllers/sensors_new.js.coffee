@@ -6,6 +6,7 @@ App.SensorsNewController = Ember.Controller.extend
       data = @getProperties(
         'name',
         'formula'
+        'pin_number'
       )
       user = @get('controllers.login').get('currentUser')
       sensor = @store.createRecord 'sensor', data
