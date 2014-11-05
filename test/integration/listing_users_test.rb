@@ -16,7 +16,6 @@ class ListingUsersTest < ActionDispatch::IntegrationTest
   test 'fetch one user' do
     @user.generate_token
     get "/api/users/#{@user.id}", {}, { 'Authorization' => token_header(@user.token)}
-    puts response.body
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
   end

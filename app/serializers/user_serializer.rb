@@ -3,6 +3,7 @@ class UserSerializer < ActiveModel::Serializer
   attributes :id, :name, :email, :admin #, :links
   
   has_many :transmitters
+  has_many :sensors
 
   def attributes
     data = super
