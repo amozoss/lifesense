@@ -3,9 +3,9 @@ h1
 
 link-to "transmitters.new" | New Transmitter
 .row
-  .col-sm-4.list-group
+  .col-xs-4.list-group
     collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
       link-to 'transmitters.transmitter' content classNames="list-group-item"
         name
-  .col-sm-8
+  .col-xs-8
     outlet
