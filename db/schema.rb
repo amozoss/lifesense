@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105201014) do
+ActiveRecord::Schema.define(version: 20141106025909) do
+
+  create_table "records", force: true do |t|
+    t.integer  "time_stamp"
+    t.float    "value"
+    t.integer  "sensor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "records", ["sensor_id", "time_stamp"], name: "index_records_on_sensor_id_and_time_stamp"
+  add_index "records", ["sensor_id"], name: "index_records_on_sensor_id"
 
   create_table "sensors", force: true do |t|
     t.string   "name"
