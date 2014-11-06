@@ -45,3 +45,15 @@ count = 0
       user.sensors.create!(name: name, pin_number: pin, formula: formula)
     end
 end
+
+day = 1
+5.times do
+    users.each do |user|
+      user.sensors.each do |sensor|
+        value = rand(100000)
+        time_stamp = day.days.ago.to_i * 1000
+        sensor.records.create!(time_stamp: time_stamp, value:value)
+        day += 1
+      end
+    end
+end
