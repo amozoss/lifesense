@@ -6,4 +6,11 @@ p
 p
   | Formula: #{model.formula}
 
+  
+
 a.delete click="delete" delete
+
+ul
+each record in model.records
+  li
+    | #{record.time_stamp}, #{record.value}
