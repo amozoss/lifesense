@@ -6,9 +6,10 @@ p
 p
   | Formula: #{model.formula}
 
-  
 
 a.delete click="delete" delete
+
+line-time-series-chart chartId='sensed'
 
 ul
 each record in model.records
