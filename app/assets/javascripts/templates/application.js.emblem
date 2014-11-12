@@ -12,22 +12,24 @@ header.navbar.navbar-fixed-top.navbar-inverse
         nav
           ul.nav.navbar-nav.navbar-right
             if isAuthenticated
-              link-to "sensors" tagName="li" 
+              link-to "sensors" tagName="li"
                 a Sensors
-              link-to "transmitters" tagName="li" 
+              link-to "transmitters" tagName="li"
                 a Transmitters
-            else 
-              link-to "home" tagName="li" 
+              link-to "graphs" tagName="li"
+                a ExampleGraphs
+            else
+              link-to "home" tagName="li"
                 a Home
-            link-to "help" tagName="li" 
+            link-to "help" tagName="li"
               a Help
             if isAuthenticated
               li
                 a click="logout" Logout
             else
-              link-to "login" tagName="li" 
+              link-to "login" tagName="li"
                 a Log in
-      
+
 
 section#main
   = outlet

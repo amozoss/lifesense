@@ -10,6 +10,8 @@ App.Router.map ()->
   @route 'login'
   @route 'signup'
 
+  @resource 'graphs'
+
   @resource 'user', path: '', ->
 			@resource 'transmitters', ->
 				@route 'transmitter', path: "/:transmitter_id"
@@ -17,4 +19,3 @@ App.Router.map ()->
 			@resource 'sensors', ->
 				@route 'new'
 				@route 'sensor', path: "/:sensor_id"
-

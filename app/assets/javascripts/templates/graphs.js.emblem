@@ -1,0 +1,4 @@
+h1 Example Graphs
+
+line-time-series-chart chartId='zach_chart'
+line-time-series-chart chartId='another chart'
