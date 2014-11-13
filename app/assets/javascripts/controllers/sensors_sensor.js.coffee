@@ -1,11 +1,6 @@
 App.SensorsSensorController = Ember.Controller.extend
 
-  beforeModel: ( ->
-    debugger
-  )
-
-  data: (->
-  [
+  data: [
     [Date.UTC(2012, 0, 1), 0],
     [Date.UTC(2012, 0, 2), 2],
     [Date.UTC(2012, 0, 3), 3],
@@ -20,7 +15,7 @@ App.SensorsSensorController = Ember.Controller.extend
     [Date.UTC(2012, 0, 12), 4.5],
     [Date.UTC(2012, 0, 13), 4.5],
     [Date.UTC(2012, 0, 14), 4.5],
-  ]),
+  ]
 
   # Possibly Keep and modify to delete and individual record
 #  actions:
