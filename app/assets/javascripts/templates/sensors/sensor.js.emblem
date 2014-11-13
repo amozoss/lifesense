@@ -1,6 +1,6 @@
 h3
   model.name
-  
+
 p
   | Pin: #{model.pin_number}
 p

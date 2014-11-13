@@ -7,7 +7,10 @@ header.navbar.navbar-fixed-top.navbar-inverse
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        link-to "user" id='logo' | LifeSense
+        if isAuthenticated
+          link-to "sensors" id='logo' | LifeSense
+        else
+          link-to "home" id='logo' | LifeSense
       .collapse.navbar-collapse.bs-navbar-collapse
         nav
           ul.nav.navbar-nav.navbar-right
@@ -16,8 +19,6 @@ header.navbar.navbar-fixed-top.navbar-inverse
                 a Sensors
               link-to "transmitters" tagName="li"
                 a Transmitters
-              link-to "graphs" tagName="li"
-                a ExampleGraphs
             else
               link-to "home" tagName="li"
                 a Home

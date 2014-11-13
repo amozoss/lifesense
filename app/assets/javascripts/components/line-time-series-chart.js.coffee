@@ -18,6 +18,7 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
 
   clean:( ->
     $(@get("title")).empty()
+    $(@get("data")).empty()
   ),
 
   draw: ->
