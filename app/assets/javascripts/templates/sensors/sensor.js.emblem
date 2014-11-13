@@ -9,7 +9,7 @@ p
 
 a.delete click="delete" delete
 
-line-time-series-chart chartId='sensed'
+line-time-series-chart chartId='sensed' title=model.name  data=data
 
 ul
 each record in model.records

@@ -1,4 +1,3 @@
 h1 Example Graphs
 
-line-time-series-chart chartId='zach_chart'
-line-time-series-chart chartId='another chart'
+line-time-series-chart chartId='zach_chart' title='Here is my Dynamic Title' data=data

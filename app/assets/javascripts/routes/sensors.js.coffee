@@ -1,3 +1,4 @@
 App.SensorsRoute = App.AuthenticatedRoute.extend
-  model: ->
+  model:( ->
     @modelFor('user').get('sensors')
+  ),
