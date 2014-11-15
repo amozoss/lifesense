@@ -4,7 +4,7 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
 
   contentChanged: (->
     @rerender()
-  ).observes('series')
+  ).observes('series', 'data')
 
   didInsertElement:( ->
     this.draw()

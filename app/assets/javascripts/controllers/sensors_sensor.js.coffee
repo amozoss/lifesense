@@ -7,7 +7,7 @@ App.SensorsSensorController = Ember.Controller.extend
         data.push([record.get('time_stamp'), record.get('value')])
         @set('data', data)
     )
-  ).observes('records')
+  )
 
   data: null
 
