@@ -1,11 +1,21 @@
 App.SensorsSensorController = Ember.Controller.extend
   setupData: (->
-    console.log("setupData")
+    formula = @get('model.formula')
     @get('model.records').then ((records)=>
       data = []
       for record in records.content
-        data.push([record.get('time_stamp'), record.get('value')])
-        @set('data', data)
+        value = record.get('value')
+
+        scope = { x : value }
+        calculated_value = null
+        # apply the sensor formula
+        try
+          calculated_value = math.eval("formula", scope)
+        catch
+          calculated_value = value
+
+        data.push([record.get('time_stamp'), calculated_value])
+      @set('data', data)
     )
   )
 

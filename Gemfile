@@ -31,6 +31,7 @@ gem 'rails-assets-jquery.cookie'
 gem 'rails-assets-ember-localstorage-adapter'
 gem 'rails-assets-ember-list-view'
 gem 'rails-assets-highcharts'
+gem 'rails-assets-mathjs'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
