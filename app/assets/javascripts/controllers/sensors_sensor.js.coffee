@@ -1,21 +1,15 @@
 App.SensorsSensorController = Ember.Controller.extend
+  setupData: (->
+    console.log("setupData")
+    @get('model.records').then ((records)=>
+      data = []
+      for record in records.content
+        data.push([record.get('time_stamp'), record.get('value')])
+        @set('data', data)
+    )
+  ).observes('records')
 
-  data: [
-    [Date.UTC(2012, 0, 1), 0],
-    [Date.UTC(2012, 0, 2), 2],
-    [Date.UTC(2012, 0, 3), 3],
-    [Date.UTC(2012, 0, 4), 2.15],
-    [Date.UTC(2012, 0, 5), 2.45],
-    [Date.UTC(2012, 0, 6), 6],
-    [Date.UTC(2012, 0, 7), 4.5],
-    [Date.UTC(2012, 0, 8), 4.5],
-    [Date.UTC(2012, 0, 9), 4.5],
-    [Date.UTC(2012, 0, 10), 4.5],
-    [Date.UTC(2012, 0, 11), 4.5],
-    [Date.UTC(2012, 0, 12), 4.5],
-    [Date.UTC(2012, 0, 13), 4.5],
-    [Date.UTC(2012, 0, 14), 4.5],
-  ]
+  data: null
 
   # Possibly Keep and modify to delete and individual record
 #  actions:
