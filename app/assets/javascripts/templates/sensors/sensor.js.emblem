@@ -1,17 +1,19 @@
-h3
-  model.name
-
-p
-  | Pin: #{model.pin_number}
-p
-  | Formula: #{model.formula}
-
-
-a.delete click="delete" delete
-
 line-time-series-chart chartId='sensed' title=model.name  data=data
 
-ul
-each record in model.records
-  li
-    | #{record.time_stamp}, #{record.value}
+a.delete click="delete" Delete Sensor
+p
+  | Pin: #{model.pin_number}:
+  br
+  | Formula: #{model.formula}
+table.table
+  thead
+    tr
+      th Timestamp
+      th Record
+  tbody
+  each record in model.records
+    tr
+      td
+        | #{record.time_stamp}
+      td
+        | #{record.value}

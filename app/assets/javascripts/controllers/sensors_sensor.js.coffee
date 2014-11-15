@@ -21,6 +21,7 @@ App.SensorsSensorController = Ember.Controller.extend
 
   data: null
 
+
   # Possibly Keep and modify to delete and individual record
 #  actions:
 #    delete: ->

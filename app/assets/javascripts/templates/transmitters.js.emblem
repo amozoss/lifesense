@@ -1,11 +1,11 @@
-h1
+h1.jumbotron
   | Transmitters
 
 link-to "transmitters.new" | New Transmitter
 .row
-  .col-xs-4.list-group
+  .col-xs-3.list-group
     collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
       link-to 'transmitters.transmitter' content classNames="list-group-item"
         name
-  .col-xs-8
+  .col-xs-9
     outlet
