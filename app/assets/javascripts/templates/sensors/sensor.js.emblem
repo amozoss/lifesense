@@ -2,18 +2,20 @@ line-time-series-chart chartId='sensed' title=model.name  data=data
 
 a.delete click="delete" Delete Sensor
 p
-  | Pin: #{model.pin_number}:
+  | Pin: #{model.pin_number}
   br
   | Formula: #{model.formula}
-table.table
-  thead
-    tr
-      th Timestamp
-      th Record
-  tbody
-    each record in model.records
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover.table-condensed
+    thead
       tr
-        td
-          =format-date record.time_stamp
-        td
-          record.value
+        th Timestamp
+        th Record
+    tbody
+      each record in model.records
+        tr
+          td
+            =format-date record.time_stamp
+          td
+            | #{record.value}
