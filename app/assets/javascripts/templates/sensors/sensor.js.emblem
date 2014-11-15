@@ -11,9 +11,9 @@ table.table
       th Timestamp
       th Record
   tbody
-  each record in model.records
-    tr
-      td
-        | #{record.time_stamp}
-      td
-        | #{record.value}
+    each record in model.records
+      tr
+        td
+          =format-date record.time_stamp
+        td
+          record.value

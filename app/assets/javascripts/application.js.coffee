@@ -7,6 +7,7 @@
 #= require ember-localstorage-adapter
 #= require highcharts
 #= require mathjs
+#= require moment
 #= require jquery.cookie
 #= require ember-list-view
 #= require_self

@@ -23,7 +23,7 @@ App.SensorsSensorController = Ember.Controller.extend
 
 
   # Possibly Keep and modify to delete and individual record
-#  actions:
-#    delete: ->
-#      @get('model').destroyRecord().then =>
-#        @transitionToRoute 'sensors'
+  actions:
+    delete: ->
+      @get('model').destroyRecord().then =>
+        @transitionToRoute 'sensors'
