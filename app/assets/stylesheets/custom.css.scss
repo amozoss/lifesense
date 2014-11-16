@@ -104,3 +104,104 @@ li .active {
 }
 
 
+// Loading view
+
+.loading {
+  position: relative;
+  text-align: center;
+  margin: {
+    left: auto;
+    right: auto;
+  };
+  small {
+    display: block;
+    line-height: 1.3em;
+    margin: 10px auto 0 auto;
+    max-width: 80%;
+    text-align: center;
+  }
+}
+ 
+.loading-wrapper > h1.loading {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  right: 0;
+}
+ 
+i.ellipsis i {
+  font-style: normal;
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0s;
+  -moz-animation: dot 1.3s infinite;
+  -moz-animation-delay: 0s;
+  -o-animation: dot 1.3s infinite;
+  -o-animation-delay: 0s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0s;
+}
+ 
+i.ellipsis i+i {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.2s;
+  -moz-animation: dot 1.3s infinite;
+  -moz-animation-delay: 0.2s;
+  -o-animation: dot 1.3s infinite;
+  -o-animation-delay: 0.2s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0.2s;
+}
+ 
+i.ellipsis i+i+i {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation: dot 1.3s infinite;
+  -moz-animation-delay: 0.3s;
+  -o-animation: dot 1.3s infinite;
+  -o-animation-delay: 0.3s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0.3s;
+}
+ 
+@-webkit-keyframes dot {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+ 
+ 
+@-moz-keyframes dot {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+ 
+ 
+@-o-keyframes dot {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+ 
+ 
+@keyframes dot {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

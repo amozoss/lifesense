@@ -9,10 +9,10 @@ App.SensorsSensorController = Ember.Controller.extend
         scope = { x : value }
         calculated_value = null
         # apply the sensor formula
-        try
-          calculated_value = math.eval("formula", scope)
-        catch
-          calculated_value = value
+        #try
+        #calculated_value = math.eval("formula", scope)
+        #catch
+        calculated_value = value
 
         data.push([record.get('time_stamp'), calculated_value])
       @set('data', data)

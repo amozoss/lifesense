@@ -7,19 +7,13 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
   ).observes('series', 'data')
 
   didInsertElement:( ->
-    this.draw()
-  )
-
-  contentDidChange: Ember.observer(->
-    @clean()
+    Highcharts.setOptions({
+      global: {
+        useUTC: false
+      }
+    })
     @draw()
-    return
-  , "title"),
-
-  clean:( ->
-    $(@get("title")).empty()
-    $(@get("data")).empty()
-  ),
+  )
 
   draw: ->
     $("##{@chartId}").highcharts({
@@ -30,7 +24,7 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
       },
       xAxis: {
         type: 'datetime',
-        minRange: 10 * 24 * 3600000 # 10 TODO days could make smaller?
+        #minRange: 10 * 24 * 3600000 # 10 TODO days could make smaller?
       },
       yAxis: {
         title: {
@@ -60,33 +54,6 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
         type: 'area',
         name: 'Data Value', # TODO dynamically get property
         data:  @data ,
-#              [
-#                [Date.UTC(2012,  9, 27), 0   ],
-#                [Date.UTC(2012, 10, 10), 0.6 ],
-#                [Date.UTC(2012, 10, 18), 0.7 ],
-#                [Date.UTC(2012, 11,  2), 0.8 ],
-#                [Date.UTC(2012, 11,  9), 0.6 ],
-#                [Date.UTC(2012, 11, 16), 0.6 ],
-#                [Date.UTC(2012, 11, 28), 0.67],
-#                [Date.UTC(2013,  0,  1), 0.81],
-#                [Date.UTC(2013,  0,  8), 0.78],
-#                [Date.UTC(2013,  0, 12), 0.98],
-#                [Date.UTC(2013,  0, 27), 1.84],
-#                [Date.UTC(2013,  1, 10), 1.80],
-#                [Date.UTC(2013,  1, 18), 1.80],
-#                [Date.UTC(2013,  1, 24), 1.92],
-#                [Date.UTC(2013,  2,  4), 2.49],
-#                [Date.UTC(2013,  2, 11), 2.79],
-#                [Date.UTC(2013,  2, 15), 2.73],
-#                [Date.UTC(2013,  2, 25), 2.61],
-#                [Date.UTC(2013,  3,  2), 2.76],
-#                [Date.UTC(2013,  3,  6), 2.82],
-#                [Date.UTC(2013,  3, 13), 2.8 ],
-#                [Date.UTC(2013,  4,  3), 2.1 ],
-#                [Date.UTC(2013,  4, 26), 1.1 ],
-#                [Date.UTC(2013,  5,  9), 0.25],
-#                [Date.UTC(2013,  5, 12), 2.99],
-#                [Date.UTC(2013,  5, 12), 3   ],
-#              ]
       }]
     })
+

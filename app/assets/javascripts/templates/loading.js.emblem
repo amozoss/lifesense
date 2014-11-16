@@ -1,0 +1,10 @@
+.loading-wrapper
+  h1
+    | Loading
+    i.ellipsis
+      i
+        | .
+      i
+        |.
+      i 
+        |.
