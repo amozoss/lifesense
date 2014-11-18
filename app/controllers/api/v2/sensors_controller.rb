@@ -19,6 +19,10 @@ class Api::V2::SensorsController < ApplicationController
     respond_with :api, status: :created, json: @sensor
   end
 
+	def update
+		respond_with sensor.update(sensor_params)
+	end
+
   def destroy
     respond_with sensor.destroy
   end

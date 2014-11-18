@@ -205,3 +205,19 @@ i.ellipsis i+i+i {
   }
 }
 
+.unsaved, .saving {
+  color: #b20000;
+  display: inline-block;
+  padding: 0 0 0 20px;
+}
+
+.saving {
+  color: #00d936;
+}
+
+a.delete {
+  background: #777777;
+  border-color: #777777;
+  float: right;
+}
+

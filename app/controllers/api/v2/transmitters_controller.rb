@@ -20,6 +20,10 @@ class Api::V2::TransmittersController < ApplicationController
     respond_with :api, status: :created, json: @transmitter
   end
 
+	def update
+		respond_with transmitter.update(transmitter_params)
+	end
+
   def destroy
     respond_with transmitter.destroy
   end
@@ -31,7 +35,7 @@ class Api::V2::TransmittersController < ApplicationController
   end
 
   def transmitter_params
-    params.require(:transmitter).permit(:name, :user_id, :transmitter_token)
+    params.require(:transmitter).permit(:name)
   end
 
 

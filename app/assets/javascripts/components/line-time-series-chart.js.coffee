@@ -14,11 +14,20 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
     })
     @draw()
   )
+  
+  updateTitle: (->
+    chart = $("##{@chartId}").highcharts()
+    chart.setTitle({
+      text: @get('title')
+    }
+    )).observes('title')
+
+
 
   draw: ->
     $("##{@chartId}").highcharts({
       chart: { zoomType: 'x' },
-      title: { text:  this.get('title') }, #{ text: 'Non Linear Sample Data' }, # Possibly dynamic
+      title: { text:  @get('title') }, #{ text: 'Non Linear Sample Data' }, # Possibly dynamic
       subtitle: {
         text: 'Click and drag the plot area to zoom in'
       },

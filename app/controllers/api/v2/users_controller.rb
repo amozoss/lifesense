@@ -34,7 +34,7 @@ class Api::V2::UsersController < ApplicationController
   end
 
   def update
-    respond_with user.update(lead_params)
+    respond_with user.update(user_params)
   end
 
   def destroy

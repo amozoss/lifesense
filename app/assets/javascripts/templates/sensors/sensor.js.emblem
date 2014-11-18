@@ -1,10 +1,24 @@
 line-time-series-chart chartId='sensed' title=model.name  data=data
 
-a.delete click="delete" Delete Sensor
 p
-  | Pin: #{model.pin_number}
-  br
-  | Formula: #{model.formula}
+  label Name:
+  view Ember.TextField value=model.name
+
+  label Pin:
+  view Ember.TextField type="number" value=model.pin_number
+
+  label Formula: 
+  view Ember.TextField value=model.formula
+
+a.delete.btn.btn-primary click="delete" Delete 
+a.btn.btn-primary click="saveChanges" Save 
+if showUnsavedMessage
+  .unsaved unsaved changes
+if model.isSaving
+  .saving saving...
+
+br 
+br
 
 .table-responsive
   table.table.table-striped.table-bordered.table-hover.table-condensed
