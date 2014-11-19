@@ -42,4 +42,17 @@ App.SensorsSensorController = Ember.Controller.extend
           console.log("saved")
           @set('theFormula', @get('model.formula'))
 
+  name: 'Dan'
+  age: 16
+
+  sockets: 
+    cherryPickedName: (name, age) ->
+      @set('name', name)
+      @set('age', age)
+
+    connect: ->
+      console.log('Socket connected in sensors_sensor')
+
+    disconnect: ->
+      console.log('Socket disconnected')
         

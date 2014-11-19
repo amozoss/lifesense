@@ -7,6 +7,7 @@ gem 'rails', '4.1.6'
 gem 'ember-rails'
 gem 'ember-source'
 gem 'emblem-rails' # contains active_model_serializers
+gem 'socket.io-rails'
 gem 'ffaker'
 gem 'puma'
 gem 'bcrypt',      '3.1.7'
@@ -28,7 +29,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #Assets
 gem 'rails-assets-jquery.cookie'
-gem 'rails-assets-ember-localstorage-adapter'
 gem 'rails-assets-ember-list-view'
 gem 'rails-assets-highcharts'
 gem 'rails-assets-mathjs'

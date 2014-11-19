@@ -23,6 +23,3 @@ App.SensorSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   }
 })
 
-App.ApiKeyAdapter = DS.LSAdapter.extend
-  namespace: 'lifesense-keys'
-
