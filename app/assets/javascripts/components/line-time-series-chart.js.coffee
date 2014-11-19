@@ -4,7 +4,7 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
 
   contentChanged: (->
     @rerender()
-  ).observes('series', 'data')
+  ).observes('series', 'data', 'formula')
 
   didInsertElement:( ->
     Highcharts.setOptions({

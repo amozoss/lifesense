@@ -1,4 +1,4 @@
-line-time-series-chart chartId='sensed' title=model.name  data=data
+line-time-series-chart chartId='sensed' title=model.name data=data formula=theFormula
 
 p
   label Name:
@@ -19,6 +19,7 @@ if model.isSaving
 
 br 
 br
+ul
 
 .table-responsive
   table.table.table-striped.table-bordered.table-hover.table-condensed
@@ -27,9 +28,9 @@ br
         th Timestamp
         th Record
     tbody
-      each record in model.records
+      each record in data
         tr
           td
-            =format-date record.time_stamp
+            =get-first-element-formatted record
           td
-            | #{record.value}
+            =get-second-element record
