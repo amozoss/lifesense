@@ -1,11 +1,10 @@
-h1.jumbotron
-  | Sensors
-
 .row
-  .col-xs-3.list-group
-    link-to "sensors.new" | New Sensor 
-    collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
-      link-to 'sensors.sensor' content classNames="list-group-item"
-        name
+  .col-xs-3
+    link-to "sensors.new" classNames="new btn btn-primary" | New Sensor 
+    br
+    .list-group
+      collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
+        link-to 'sensors.sensor' content classNames="list-group-item"
+          name
   .col-xs-9
     outlet
