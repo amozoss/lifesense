@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+#This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+[:second, :minute, :hour, :day, :week, :month].each do |period|
+    FrequencyPeriod.create(name: period)
+end
 
 User.create!(name:  "dan",
              email: "dan@dan.com",

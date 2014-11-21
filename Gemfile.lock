@@ -54,6 +54,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    curb (0.8.6)
     ember-data-source (1.0.0.beta.11)
       ember-source
     ember-rails (0.15.0)
@@ -178,6 +179,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.2.0.0)
   clockwork
   coffee-rails (~> 4.0.0)
+  curb
   ember-rails
   ember-source
   emblem-rails
