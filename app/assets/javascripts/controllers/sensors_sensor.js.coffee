@@ -1,5 +1,26 @@
 App.SensorsSensorController = Ember.Controller.extend
+  needs: ['application']
+
+  theFormula: null
+  data: null
+  transmitters: null
+
+  # emberdata doesn't track dirt on relationships 
+  isTransmitterDirty: false  
+
+  getTransmitters: ->
+    userid = @get('controllers.application.currentUser').id
+    @set('isTransmitterDirty', false) # still dirty since it was just set from the model
+
+    @store.find('transmitter', { user_id: userid }).then (transmitters)=>
+      @set('transmitters', transmitters)
+
+  transmitterChange: (->
+      @set('isTransmitterDirty', true)
+  ).observes('model.transmitter')
+
   setupData: (->
+    console.log('setupData')
     formula = @get('model.formula')
     @get('model.records').then ((records)=>
       data = []
@@ -20,15 +41,8 @@ App.SensorsSensorController = Ember.Controller.extend
   ).observes('theFormula')
 
   showUnsavedMessage: ( ->
-    @get('model.isDirty') and !@get('model.isSaving')
-  ).property('model.isDirty', 'model.isSaving')
-
-  getElement: (array) ->
-    console.log("array: " + array)
-    array[0]
-
-  theFormula: null
-  data: null
+    !@get('model.isSaving') and (@get('model.isDirty') or @get('isTransmitterDirty'))
+  ).property('model.isDirty', 'model.isSaving', 'isTransmitterDirty')
 
   # Possibly Keep and modify to delete and individual record
   actions:
@@ -37,9 +51,10 @@ App.SensorsSensorController = Ember.Controller.extend
         @transitionToRoute 'sensors'
 
     saveChanges: ->
-      if @get('model.isDirty')
+      if @get('model.isDirty') or @get('isTransmitterDirty')
         @get('model').save().then =>
           console.log("saved")
+          @set('isTransmitterDirty', false)
           @set('theFormula', @get('model.formula'))
 
         

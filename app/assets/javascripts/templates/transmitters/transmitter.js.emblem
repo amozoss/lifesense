@@ -11,3 +11,9 @@ if showUnsavedMessage
   .unsaved unsaved changes
 if model.isSaving
   .saving saving...
+
+
+ul
+each pin in model.pin_numbers
+  li 
+    pin.sensor.name

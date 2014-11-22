@@ -1,6 +1,6 @@
 App.Sensor = DS.Model.extend
   name: DS.attr('string')
-  pin_number: DS.attr('number')
+  pin_number: DS.belongsTo('pin_number')
   formula: DS.attr('string')
   user: DS.belongsTo('user')
   transmitter: DS.belongsTo('transmitter')

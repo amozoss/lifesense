@@ -4,8 +4,8 @@ p
   label Name:
   view Ember.TextField value=model.name
 
-  label Pin:
-  view Ember.TextField type="number" value=model.pin_number
+  label Transmitter:
+  view Ember.Select content=transmitters optionValuePath="content" optionLabelPath="content.name" selection=transmitter value=model.transmitter prompt="-"
 
   label Formula: 
   view Ember.TextField value=model.formula
@@ -19,7 +19,7 @@ if model.isSaving
 
 br 
 br
-ul
+   
 
 .table-responsive
   table.table.table-striped.table-bordered.table-hover.table-condensed
