@@ -1,6 +1,7 @@
 class TransmitterSerializer < ActiveModel::Serializer
   attributes :id, :name, :transmitter_token
 
-  #belongs_to :user
+  has_many :pin_numbers
+
 
 end
