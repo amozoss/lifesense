@@ -5,7 +5,10 @@ p
   view Ember.TextField value=model.name
 
   label Transmitter:
-  view Ember.Select content=transmitters optionValuePath="content" optionLabelPath="content.name" selection=transmitter value=model.transmitter prompt="-"
+  view Ember.Select content=transmitters optionValuePath="content" optionLabelPath="content.name" selection=transmitter value=transmitter prompt="-"
+
+  label Pin Number:
+  view Ember.Select content=pinNumbers optionValuePath="content" optionLabelPath="content.id" value=model.pin_number selection=pinNumber prompt="-"
 
   label Formula: 
   view Ember.TextField value=model.formula

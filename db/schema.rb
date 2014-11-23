@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122004225) do
+ActiveRecord::Schema.define(version: 20141122215910) do
 
   create_table "pin_numbers", force: true do |t|
     t.string   "name"
@@ -37,14 +37,14 @@ ActiveRecord::Schema.define(version: 20141122004225) do
     t.string   "name"
     t.string   "formula"
     t.integer  "user_id"
-    t.integer  "transmitter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pin_number_id"
   end
 
-  add_index "sensors", ["transmitter_id"], name: "index_sensors_on_transmitter_id"
-  add_index "sensors", ["user_id", "transmitter_id"], name: "index_sensors_on_user_id_and_transmitter_id"
+  add_index "sensors", ["pin_number_id"], name: "index_sensors_on_pin_number_id"
   add_index "sensors", ["user_id"], name: "index_sensors_on_user_id"
+  add_index "sensors", ["user_id"], name: "index_sensors_on_user_id_and_transmitter_id"
 
   create_table "transmitters", force: true do |t|
     t.string   "name"

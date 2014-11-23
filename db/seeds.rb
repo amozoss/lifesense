@@ -31,18 +31,18 @@ users = User.order(:created_at).take(6)
     users.each do |user|
       name = Faker::Company.name
       token = Transmitter.new_token
-      user.transmitters.create!(name: name, transmitter_token: token)
+      trans = user.transmitters.create!(name: name, transmitter_token: token)
+      [:a0, :a1, :a2, :a3, :a4, :a5].each do |pin|
+        trans.pin_numbers.create!(name: pin)
+      end
     end
 end
 
-count = 0
 5.times do
     users.each do |user|
       name = Faker::Color.name
-      pin = count 
-      count += 1
 			formula = Faker::Education.degree
-      user.sensors.create!(name: name, pin_number: pin, formula: formula)
+      user.sensors.create!(name: name, formula: formula)
     end
 end
 

@@ -3,5 +3,4 @@ class SensorSerializer < ActiveModel::Serializer
 
   has_one :pin_number
   has_many :records
-  has_one :transmitter
 end

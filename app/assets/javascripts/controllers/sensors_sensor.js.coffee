@@ -4,20 +4,40 @@ App.SensorsSensorController = Ember.Controller.extend
   theFormula: null
   data: null
   transmitters: null
+  transmitter: null
+  pinNumbers: null
+  pinNumber: null
 
   # emberdata doesn't track dirt on relationships 
-  isTransmitterDirty: false  
+  isRelationDirty: false  
 
   getTransmitters: ->
+    console.log("getTransmitters")
     userid = @get('controllers.application.currentUser').id
-    @set('isTransmitterDirty', false) # still dirty since it was just set from the model
+    @set('transmitter', null)
 
     @store.find('transmitter', { user_id: userid }).then (transmitters)=>
       @set('transmitters', transmitters)
 
-  transmitterChange: (->
-      @set('isTransmitterDirty', true)
-  ).observes('model.transmitter')
+    pin_number = @get("model.pin_number")
+    if (!Ember.empty(pin_number) && !Ember.empty(pin_number.get('transmitter'))) 
+      console.log("getTrans tran Num: " + pin_number.get('transmitter').id)
+      @set('transmitter', pin_number.get('transmitter'))
+
+    @set('isRelationDirty', false) # still dirty since it was just set from the model
+
+  getPinNumbers: ->
+    transmitter = @get('transmitter')
+    if (!Ember.empty(transmitter)) 
+      console.log("getPinNumbers")
+      @set('pinNumbers', transmitter.get('pin_numbers'))
+      @set('pinNumber', @get('model.pin_number'))
+
+  relationChange: (->
+    console.log("relationChange")
+    @set('isRelationDirty', true)
+    @getPinNumbers()
+  ).observes('transmitter', 'pinNumber')
 
   setupData: (->
     console.log('setupData')
@@ -41,8 +61,8 @@ App.SensorsSensorController = Ember.Controller.extend
   ).observes('theFormula')
 
   showUnsavedMessage: ( ->
-    !@get('model.isSaving') and (@get('model.isDirty') or @get('isTransmitterDirty'))
-  ).property('model.isDirty', 'model.isSaving', 'isTransmitterDirty')
+    !@get('model.isSaving') and (@get('model.isDirty') or @get('isRelationDirty'))
+  ).property('model.isDirty', 'model.isSaving', 'isRelationDirty')
 
   # Possibly Keep and modify to delete and individual record
   actions:
@@ -51,10 +71,10 @@ App.SensorsSensorController = Ember.Controller.extend
         @transitionToRoute 'sensors'
 
     saveChanges: ->
-      if @get('model.isDirty') or @get('isTransmitterDirty')
+      if @get('model.isDirty') or @get('isRelationDirty')
         @get('model').save().then =>
           console.log("saved")
-          @set('isTransmitterDirty', false)
+          @set('isRelationDirty', false)
           @set('theFormula', @get('model.formula'))
 
         

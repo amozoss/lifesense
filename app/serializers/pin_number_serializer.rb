@@ -1,3 +1,3 @@
 class PinNumberSerializer < ActiveModel::Serializer
-  attributes :id, :name, :sensor_id
+  attributes :id, :name
 end

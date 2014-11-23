@@ -23,7 +23,7 @@ class Api::V2::SensorsController < ApplicationController
     puts "*******************************"
     puts sensor_params["transmitter"]
     param = sensor_params
-		respond_with sensor.update(name: param["name"], transmitter_id: param["transmitter"]["id"], formula: param["formula"])
+		respond_with sensor.update(name: param["name"], pin_number_id: param["pin_number"]["id"], formula: param["formula"])
 	end
 
   def destroy
@@ -37,6 +37,6 @@ class Api::V2::SensorsController < ApplicationController
   end
 
   def sensor_params
-    params.require(:sensor).permit(:id, :name, :formula, :user_id, :pin_number_id, transmitter: [:id])
+    params.require(:sensor).permit(:id, :name, :formula, :user_id, pin_number: [:id])
   end
 end
