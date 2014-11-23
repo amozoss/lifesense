@@ -16,6 +16,10 @@ class Api::V2::TransmittersController < ApplicationController
 		# TODO send error messages
     @transmitter = @current_user.transmitters.build(name: transmitter_params["name"], transmitter_token: Transmitter.new_token)
 		@transmitter.save
+    [:a0, :a1, :a2, :a3, :a4, :a5].each do |pin|
+      @transmitter.pin_numbers.create(name: pin)
+    end
+		@transmitter.save
     
     respond_with :api, status: :created, json: @transmitter
   end

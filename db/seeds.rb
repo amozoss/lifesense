@@ -47,7 +47,7 @@ end
 end
 
 day = 1
-50.times do
+5.times do
     users.each do |user|
       user.sensors.each do |sensor|
         value = rand(3000)

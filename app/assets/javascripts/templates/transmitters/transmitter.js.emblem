@@ -15,5 +15,6 @@ if model.isSaving
 
 ul
 each pin in model.pin_numbers
-  li 
-    pin.sensor.name
+  if pin.sensor
+    li 
+      pin.sensor.name
