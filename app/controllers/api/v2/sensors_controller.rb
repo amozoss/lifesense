@@ -23,7 +23,9 @@ class Api::V2::SensorsController < ApplicationController
     puts "*******************************"
     puts sensor_params["transmitter"]
     param = sensor_params
-		respond_with sensor.update(name: param["name"], pin_number_id: param["pin_number"]["id"], formula: param["formula"])
+    pin = param["pin_number"]
+    pin = param["pin_number"]["id"] if !pin.nil?
+		respond_with sensor.update(name: param["name"], pin_number_id: pin, formula: param["formula"])
 	end
 
   def destroy

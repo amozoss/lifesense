@@ -12,7 +12,7 @@ if showUnsavedMessage
 if model.isSaving
   .saving saving...
 
-
+h3 Sensors
 ul
 each pin in model.pin_numbers
   if pin.sensor

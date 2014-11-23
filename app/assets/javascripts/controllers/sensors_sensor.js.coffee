@@ -12,7 +12,6 @@ App.SensorsSensorController = Ember.Controller.extend
   isRelationDirty: false  
 
   getTransmitters: ->
-    console.log("getTransmitters")
     userid = @get('controllers.application.currentUser').id
     @set('transmitter', null)
 
@@ -21,7 +20,6 @@ App.SensorsSensorController = Ember.Controller.extend
 
     pin_number = @get("model.pin_number")
     if (!Ember.empty(pin_number) && !Ember.empty(pin_number.get('transmitter'))) 
-      console.log("getTrans tran Num: " + pin_number.get('transmitter').id)
       @set('transmitter', pin_number.get('transmitter'))
 
     @set('isRelationDirty', false) # still dirty since it was just set from the model
@@ -29,18 +27,15 @@ App.SensorsSensorController = Ember.Controller.extend
   getPinNumbers: ->
     transmitter = @get('transmitter')
     if (!Ember.empty(transmitter)) 
-      console.log("getPinNumbers")
       @set('pinNumbers', transmitter.get('pin_numbers'))
       @set('pinNumber', @get('model.pin_number'))
 
   relationChange: (->
-    console.log("relationChange")
     @set('isRelationDirty', true)
     @getPinNumbers()
   ).observes('transmitter', 'pinNumber')
 
   setupData: (->
-    console.log('setupData')
     formula = @get('model.formula')
     @get('model.records').then ((records)=>
       data = []
@@ -73,7 +68,6 @@ App.SensorsSensorController = Ember.Controller.extend
     saveChanges: ->
       if @get('model.isDirty') or @get('isRelationDirty')
         @get('model').save().then =>
-          console.log("saved")
           @set('isRelationDirty', false)
           @set('theFormula', @get('model.formula'))
 
