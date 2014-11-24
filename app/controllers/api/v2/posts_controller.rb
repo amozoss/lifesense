@@ -15,7 +15,10 @@ class Api::V2::PostsController < ApplicationController
   end
 
 	def update
-		respond_with post.update(post_params)
+    p = post_params
+    tag = p["tag"]
+    tag = p["tag"]["id"] if !tag.nil?
+		respond_with post.update(title: p["title"], content: p["content"], tag_id: tag)
 	end
 
   def destroy

@@ -12,7 +12,9 @@ App.Router.map ()->
 
   @resource 'blog', ->
     @resource 'posts', ->
-      @route 'post', path: "/:post_id"
+      @route 'post', path: "/:post_id", ->
+        @route 'edit'
+      @route 'new'
 
   @resource 'user', path: '/', ->
 			@resource 'transmitters', ->

@@ -1,2 +1,4 @@
-Ember.Handlebars.helper('format-date', (date)->
-  moment(date).format('LLL'))
+Ember.Handlebars.helper('format-date', (date, format)->
+  moment(date).format(format))
+  
+

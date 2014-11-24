@@ -36,4 +36,4 @@ br
           td
             =get-first-element-formatted record
           td
-            =get-second-element record
+            =get-element record 1

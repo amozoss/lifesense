@@ -30,6 +30,13 @@ App.TransmitterSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   }
 })
 
+App.PostSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
+  attrs: {
+    tag: { embedded: 'always' }
+  }
+})
+
+
 App.ApiKeyAdapter = DS.LSAdapter.extend
   namespace: 'lifesense-keys'
 

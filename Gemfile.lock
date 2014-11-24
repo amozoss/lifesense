@@ -117,6 +117,7 @@ GEM
     rails-assets-jquery (1.10.2)
     rails-assets-jquery.cookie (1.4.1)
       rails-assets-jquery (>= 1.2)
+    rails-assets-marked (0.3.2)
     rails-assets-mathjs (1.1.0)
     rails-assets-moment (2.7.0)
     rails_12factor (0.0.2)
@@ -187,6 +188,7 @@ DEPENDENCIES
   rails-assets-ember-localstorage-adapter
   rails-assets-highcharts
   rails-assets-jquery.cookie
+  rails-assets-marked
   rails-assets-mathjs
   rails-assets-moment
   rails_12factor (= 0.0.2)

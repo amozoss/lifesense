@@ -1,0 +1,11 @@
+dl
+  dt: label Title:
+  dd: view Ember.TextField value=model.title
+
+dl
+  dt: label Content:
+  dd: view Ember.TextArea value=model.content rows=25
+
+a.btn.btn-primary type='submit' value='Save Changes' click='saveChanges' Save 
+a.delete.btn.btn-primary click="cancel" cancel
+

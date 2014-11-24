@@ -1,0 +1,11 @@
+.row
+  .col-sm-4
+    if isAdmin
+      link-to "posts.new" classNames="new btn btn-primary" | New Post
+      br
+    .list-group
+      collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
+        link-to 'posts.post' content classNames="list-group-item"
+          | #{=format-date updated_at "MMM DD" } #{title}
+  .col-sm-8
+    outlet

@@ -10,6 +10,7 @@
 #= require moment
 #= require jquery.cookie
 #= require ember-list-view
+#= require marked
 #= require_self
 #= require app
 
