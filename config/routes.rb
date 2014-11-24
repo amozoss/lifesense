@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :transmitters
       resources :sensors
       resources :records, except: [:index]
+      resources :posts
       post 'login'  => 'users#login'
       post 'signup'  => 'users#create'
     end

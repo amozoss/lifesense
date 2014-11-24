@@ -24,6 +24,8 @@ header.navbar.navbar-fixed-top.navbar-inverse
                 a Home
             link-to "help" tagName="li"
               a Help
+            link-to "blog" tagName="li"
+              a Blog
             if isAuthenticated
               li
                 a click="logout" Logout

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122215910) do
+ActiveRecord::Schema.define(version: 20141124180920) do
 
   create_table "pin_numbers", force: true do |t|
     t.string   "name"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20141122215910) do
   end
 
   add_index "pin_numbers", ["transmitter_id"], name: "index_pin_numbers_on_transmitter_id"
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["tag_id"], name: "index_posts_on_tag_id"
 
   create_table "records", force: true do |t|
     t.integer  "time_stamp"
@@ -45,6 +55,12 @@ ActiveRecord::Schema.define(version: 20141122215910) do
   add_index "sensors", ["pin_number_id"], name: "index_sensors_on_pin_number_id"
   add_index "sensors", ["user_id"], name: "index_sensors_on_user_id"
   add_index "sensors", ["user_id"], name: "index_sensors_on_user_id_and_transmitter_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "transmitters", force: true do |t|
     t.string   "name"

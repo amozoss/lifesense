@@ -10,6 +10,10 @@ App.Router.map ()->
   @route 'login'
   @route 'signup'
 
+  @resource 'blog', ->
+    @resource 'posts', ->
+      @route 'post', path: "/:post_id"
+
   @resource 'user', path: '/', ->
 			@resource 'transmitters', ->
 				@route 'transmitter', path: "/:transmitter_id"
