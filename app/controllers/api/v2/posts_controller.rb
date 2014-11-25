@@ -11,7 +11,10 @@ class Api::V2::PostsController < ApplicationController
   end
 
   def create
-    respond_with :api, status: :created, json: Post.create(post_params)
+    p = post_params
+    tag = p["tag"]
+    tag = p["tag"]["id"] if !tag.nil?
+    respond_with :api, status: :created, json: Post.create(title: p["title"], content: p["content"], tag_id: tag)
   end
 
 	def update

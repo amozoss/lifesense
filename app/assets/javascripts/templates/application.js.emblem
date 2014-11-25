@@ -22,10 +22,10 @@ header.navbar.navbar-fixed-top.navbar-inverse
             else
               link-to "home" tagName="li"
                 a Home
-            link-to "help" tagName="li"
-              a Help
             link-to "posts" tagName="li"
               a Blog
+            link-to "help" tagName="li"
+              a Help
             if isAuthenticated
               li
                 a click="logout" Logout

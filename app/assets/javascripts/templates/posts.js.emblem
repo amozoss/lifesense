@@ -1,10 +1,22 @@
+.navbar.navbar-default.span5
+  ul.nav.navbar-nav
+    li{bind-attr class=isAll} 
+      a click=all All
+    li{bind-attr class=isSoftware} 
+      a click=software Software
+    li{bind-attr class=isHardware} 
+      a click=hardware Hardware
+    li{bind-attr class=isMeeting} 
+      a click=meeting Meeting
+    li{bind-attr class=isChallenges} 
+      a click=challenges Challenges
 .row
   .col-sm-4
     if isAdmin
       link-to "posts.new" classNames="new btn btn-primary" | New Post
       br
     .list-group
-      collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
+      collection Ember.ListView contentBinding="filteredContent" height=500 rowHeight=1
         link-to 'posts.post' content classNames="list-group-item"
           | #{=format-date updated_at "MMM DD" } #{title}
   .col-sm-8

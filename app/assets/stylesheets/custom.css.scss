@@ -219,9 +219,18 @@ i.ellipsis i+i+i {
   color: #00d936;
 }
 
+.to-right {
+  float: right;
+}
+
 a.delete {
   background: #777777;
   border-color: #777777;
   float: right;
+}
+
+a.selected-tag {
+  background: #777777;
+  border-color: #777777;
 }
 

@@ -1,14 +1,17 @@
 outlet
 
 unless isEditing
-  h3
-    =model.title
-
-  h5
+  h5.to-right
     =format-date model.created_at "MMM DD, YYYY"
+  br
+  h1.center
+    model.title
 
   markdown model.content
 
+  br
+  br
   if isAdmin
     link-to 'edit' 'posts.post.edit' classNames="btn btn-primary"
+
     a.delete.btn.btn-primary click="delete" Delete 
