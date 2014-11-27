@@ -10,6 +10,8 @@ gem 'emblem-rails' # contains active_model_serializers
 gem 'ffaker'
 gem 'puma'
 gem 'bcrypt',      '3.1.7'
+gem 'clockwork'
+gem 'curb'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

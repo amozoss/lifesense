@@ -13,6 +13,22 @@
 
 ActiveRecord::Schema.define(version: 20141125052209) do
 
+  create_table "clockwork_database_events", force: true do |t|
+    t.integer  "frequency_quantity"
+    t.integer  "frequency_period_id"
+    t.string   "at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "clockwork_database_events", ["frequency_period_id"], name: "index_clockwork_database_events_on_frequency_period_id"
+
+  create_table "frequency_periods", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pin_numbers", force: true do |t|
     t.string   "name"
     t.integer  "transmitter_id"
