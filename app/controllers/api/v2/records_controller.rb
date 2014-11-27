@@ -11,9 +11,12 @@ class Api::V2::RecordsController < ApplicationController
 		# TODO send error messages
     transmitter = @current_user.transmitters.find_by(transmitter_token: record_params["transmitter_token"]) if @current_user 
 
-    sensor = @current_user.sensors.find_by(transmitter: transmitter, pin_number: record_params["pin_number"]) if transmitter
-    @record = sensor.records.build(time_stamp: DateTime.now.to_i * 1000, value: record_params["value"])
-    @record.save
+    pin_number = transmitter.pin_numbers.find_by(name: record_params["pin_number"])
+    sensor = pin_number.sensor if pin_number
+    if sensor
+      @record = sensor.records.build(time_stamp: DateTime.now.to_i * 1000, value: record_params["value"])
+      @record.save
+    end
 
     respond_with :api, status: :created, json: @record
   end

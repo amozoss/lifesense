@@ -71,13 +71,22 @@ App.SensorsSensorController = Ember.Controller.extend
           @set('isRelationDirty', false)
           @set('theFormula', @get('model.formula'))
 
-  name: 'Dan'
-  age: 16
-
   sockets: 
-    cherryPickedName: (name, age) ->
-      @set('name', name)
-      @set('age', age)
+    test: (data) ->
+      console.log("here it comes")
+      console.log(data)
+      sensor = @get('model')
+      record = {
+        id: 154,
+        sensor: sensor
+        time_stamp: 1417111427000
+        value: 2000
+      }
+      @store.push('record', record)
+      @set('theFormula', @get('model.formula'))
+
+
+      
 
     connect: ->
       console.log('Socket connected in sensors_sensor')
