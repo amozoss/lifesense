@@ -7,6 +7,7 @@ App.SensorsSensorController = Ember.Controller.extend
   transmitter: null
   pinNumbers: null
   pinNumber: null
+  record: null
 
   # emberdata doesn't track dirt on relationships 
   isRelationDirty: false  
@@ -53,7 +54,7 @@ App.SensorsSensorController = Ember.Controller.extend
         data.push([record.get('time_stamp'), calculated_value])
       @set('data', data)
     )
-  ).observes('theFormula')
+  ).observes('theFormula', 'record')
 
   showUnsavedMessage: ( ->
     !@get('model.isSaving') and (@get('model.isDirty') or @get('isRelationDirty'))
@@ -73,17 +74,20 @@ App.SensorsSensorController = Ember.Controller.extend
 
   sockets: 
     test: (data) ->
-      console.log("here it comes")
       console.log(data)
-      sensor = @get('model')
-      record = {
-        id: 154,
-        sensor: sensor
-        time_stamp: 1417111427000
-        value: 2000
-      }
-      @store.push('record', record)
-      @set('theFormula', @get('model.formula'))
+      data = data.record
+      console.log(data)
+
+      @store.find('sensor', data.sensor_id).then (sensor)=>
+        record = {
+          id: data.id,
+          sensor: sensor
+          time_stamp: data.time_stamp
+          value: data.value
+        }
+        @store.push('record', record)
+        if @get('model').id == sensor.id
+          @set('record', record)
 
 
       
