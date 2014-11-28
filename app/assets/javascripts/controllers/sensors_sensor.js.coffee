@@ -85,7 +85,7 @@ App.SensorsSensorController = Ember.Controller.extend
           time_stamp: data.time_stamp
           value: data.value
         }
-        @store.push('record', record)
+        #@store.push('record', record)
         if @get('model').id == sensor.id
           @set('record', record)
 

@@ -20,8 +20,6 @@ class Api::V2::SensorsController < ApplicationController
   end
 
 	def update
-    puts "*******************************"
-    puts sensor_params["transmitter"]
     param = sensor_params
     pin = param["pin_number"]
     pin = param["pin_number"]["id"] if !pin.nil?

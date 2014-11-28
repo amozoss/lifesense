@@ -1,6 +1,6 @@
 class Api::V2::RecordsController < ApplicationController
   respond_to :json
-  before_action :authenticate
+  before_action :authenticate, except: [:create]
   skip_before_filter :verify_authenticity_token
 
   def show
@@ -9,7 +9,9 @@ class Api::V2::RecordsController < ApplicationController
 
   def create
 		# TODO send error messages
-    transmitter = @current_user.transmitters.find_by(transmitter_token: record_params["transmitter_token"]) if @current_user 
+    puts "*********************************************"
+    puts record_params
+    transmitter = Transmitter.find_by(transmitter_token: record_params["transmitter_token"]) 
 
     pin_number = transmitter.pin_numbers.find_by(name: record_params["pin_number"])
     sensor = pin_number.sensor if pin_number
