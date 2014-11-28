@@ -9,8 +9,8 @@ App.SensorsSensorController = Ember.Controller.extend
   pinNumber: null
   record: null
 
-  # emberdata doesn't track dirt on relationships 
-  isRelationDirty: false  
+  # emberdata doesn't track dirt on relationships
+  isRelationDirty: false
 
   getTransmitters: ->
     userid = @get('controllers.application.currentUser').id
@@ -63,6 +63,7 @@ App.SensorsSensorController = Ember.Controller.extend
   red: false
   blue: false
   green: false
+
   # Possibly Keep and modify to delete and individual record
   actions:
     delete: ->
@@ -74,7 +75,7 @@ App.SensorsSensorController = Ember.Controller.extend
         @get('model').save().then =>
           @set('isRelationDirty', false)
           @set('theFormula', @get('model.formula'))
-    
+
     ledRed: ->
       @socket.emit 'led', { red: @get('red')}
       @set('red', !@get('red'))
@@ -106,11 +107,10 @@ App.SensorsSensorController = Ember.Controller.extend
           @set('record', record)
 
 
-      
+
 
     connect: ->
       console.log('Socket connected in sensors_sensor')
 
     disconnect: ->
       console.log('Socket disconnected')
-        
