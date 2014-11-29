@@ -17,6 +17,13 @@ User.create!(name:  "dan",
              admin: true,
              token: User.new_token)
 
+User.create!(name:  "zach",
+             email: "zach.toolson@gmail.com",
+             password: "zach",
+             password_confirmation: "zach",
+             admin: true,
+             token: User.new_token)
+
 20.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@lifesense.com"
@@ -44,8 +51,9 @@ end
 5.times do
     users.each do |user|
       name = Faker::Color.name
-			formula = Faker::Education.degree
-      user.sensors.create!(name: name, formula: formula)
+      formula = Faker::Education.degree
+      lower_bound = rand(3000)
+      user.sensors.create!(name: name, formula: formula, lower: lower_bound)
     end
 end
 
