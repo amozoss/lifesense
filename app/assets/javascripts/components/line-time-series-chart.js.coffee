@@ -25,11 +25,11 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
   loadData: (->
     chart = $("##{@chartId}").highcharts()
     series = chart.series[0]
-    record = @get('record')
-    console.log("***")
-    console.log(record)
-    series.addPoint([record.time_stamp, record.value],true, true)
-  ).observes('record')
+    sensorData = @get('sensorData')
+    pin = @get('pin.name')
+    time = (new Date).getTime()
+    series.addPoint([time, sensorData[pin]],true, true)
+  ).observes('sensorData')
 
   draw: ->
     $("##{@chartId}").highcharts({

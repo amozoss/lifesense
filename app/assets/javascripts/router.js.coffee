@@ -23,3 +23,4 @@ App.Router.map ()->
 			@resource 'sensors', ->
 				@route 'new'
 				@route 'sensor', path: "/:sensor_id"
+			@route 'live'
