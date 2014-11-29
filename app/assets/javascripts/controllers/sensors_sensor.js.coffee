@@ -1,8 +1,6 @@
 App.SensorsSensorController = Ember.Controller.extend
   needs: ['application']
 
-  isChecked: true
-  disabled: false
   theFormula: null
   data: null
   transmitters: null
@@ -10,14 +8,11 @@ App.SensorsSensorController = Ember.Controller.extend
   pinNumbers: null
   pinNumber: null
   record: null
+
+  isLED: Ember.computed.alias('model.led')
   
   # emberdata doesn't track dirt on relationships
   isRelationDirty: false
-
-  isCheckedChanged: (->
-    isChecked = @get('isChecked')
-    console.log isChecked
-  ).observes('isChecked')
 
   getTransmitters: ->
     userid = @get('controllers.application.currentUser').id
@@ -79,9 +74,9 @@ App.SensorsSensorController = Ember.Controller.extend
           @set('isRelationDirty', false)
           @set('theFormula', @get('model.formula'))
     
-    led: (pin, isChecked)->
-      console.log(pin.get('name'))
-      console.log(isChecked)
+    led: (isChecked)->
+      @set('model.led', isChecked)
+      console.log("SHELESE")
 
   sockets: 
     test: (data) ->
@@ -97,9 +92,6 @@ App.SensorsSensorController = Ember.Controller.extend
         console.log(record)
         if @get('model').id == sensor.id
           @set('record', record)
-
-
-
 
     connect: ->
       console.log('Socket connected in sensors_sensor')

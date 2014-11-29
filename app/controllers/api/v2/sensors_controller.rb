@@ -23,7 +23,7 @@ class Api::V2::SensorsController < ApplicationController
     param = sensor_params
     pin = param["pin_number"]
     pin = param["pin_number"]["id"] if !pin.nil?
-    respond_with sensor.update(name: param["name"], pin_number_id: pin, formula: param["formula"], lower: param["lower"])
+    respond_with sensor.update_attributes(name: param["name"], pin_number_id: pin, formula: param["formula"], lower: param["lower"], led: param["led"])
   end
 
   def destroy
@@ -37,6 +37,6 @@ class Api::V2::SensorsController < ApplicationController
   end
 
   def sensor_params
-    params.require(:sensor).permit(:id, :name, :formula, :lower, :user_id, pin_number: [:id])
+    params.require(:sensor).permit(:id, :name, :formula, :led, :lower, :user_id, pin_number: [:id])
   end
 end
