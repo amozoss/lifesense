@@ -76,7 +76,6 @@ App.SensorsSensorController = Ember.Controller.extend
     
     led: (isChecked)->
       @set('model.led', isChecked)
-      console.log("SHELESE")
 
   sockets: 
     test: (data) ->
