@@ -26,6 +26,8 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
     chart = $("##{@chartId}").highcharts()
     series = chart.series[0]
     record = @get('record')
+    console.log("***")
+    console.log(record)
     series.addPoint([record.time_stamp, record.value],true, true)
   ).observes('record')
 

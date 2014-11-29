@@ -1,5 +1,8 @@
 line-time-series-chart chartId='sensed' title=model.name data=data formula=theFormula record=record
 
+a click=ledRed Toggle Red
+a click=ledBlue Toggle Blue
+a click=ledGreen Toggle Green
 p
   label Name:
   view Ember.TextField value=model.name

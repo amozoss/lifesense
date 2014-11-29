@@ -60,6 +60,9 @@ App.SensorsSensorController = Ember.Controller.extend
     !@get('model.isSaving') and (@get('model.isDirty') or @get('isRelationDirty'))
   ).property('model.isDirty', 'model.isSaving', 'isRelationDirty')
 
+  red: false
+  blue: false
+  green: false
   # Possibly Keep and modify to delete and individual record
   actions:
     delete: ->
@@ -71,21 +74,34 @@ App.SensorsSensorController = Ember.Controller.extend
         @get('model').save().then =>
           @set('isRelationDirty', false)
           @set('theFormula', @get('model.formula'))
+    
+    ledRed: ->
+      @socket.emit 'led', { red: @get('red')}
+      @set('red', !@get('red'))
+
+    ledGreen: ->
+      @socket.emit 'led', { green: @get('green')}
+      @set('green', !@get('green'))
+
+    ledBlue: ->
+      @socket.emit 'led', { blue: @get('blue')}
+      @set('blue', !@get('blue'))
+
+
+
 
   sockets: 
     test: (data) ->
-      console.log(data)
       data = data.record
-      console.log(data)
 
       @store.find('sensor', data.sensor_id).then (sensor)=>
         record = {
-          id: data.id,
           sensor: sensor
-          time_stamp: data.time_stamp
+          time_stamp: (new Date).getTime()
           value: data.value
         }
         #@store.push('record', record)
+        console.log(record)
         if @get('model').id == sensor.id
           @set('record', record)
 
