@@ -4,8 +4,8 @@ App.BootstrapSwitchLedComponent = Ember.Component.extend
   ).observes('isLED')
 
   afterRenderEvent: ->
-    @$("[type='checkbox']").bootstrapSwitch('size', 'medium')
-    @$("[type='checkbox']").bootstrapSwitch('labelText', 'Output')
+    @$("[type='checkbox']").bootstrapSwitch('size', @get('size'))
+    @$("[type='checkbox']").bootstrapSwitch('labelText', @get('labelText'))
     @$("[type='checkbox']").bootstrapSwitch('state', @get('isLED'))
     self = @
     @$("[type='checkbox']").on "switchChange.bootstrapSwitch", (e, data)->

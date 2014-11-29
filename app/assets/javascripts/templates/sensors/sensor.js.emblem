@@ -11,7 +11,7 @@ p
   label Pin Number:
   view Ember.Select content=pinNumbers optionValuePath="content" optionLabelPath="content.name" value=model.pin_number selection=pinNumber prompt="-"
 
-  bootstrap-switch-led isLED=model.led action="led"
+  bootstrap-switch-led isLED=model.led action="led" labelText="Output" size="medium"
   br
 
   unless isLED
