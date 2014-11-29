@@ -1,6 +1,8 @@
 App.SensorsSensorController = Ember.Controller.extend
   needs: ['application']
 
+  isChecked: true
+  disabled: false
   theFormula: null
   data: null
   transmitters: null
@@ -8,9 +10,19 @@ App.SensorsSensorController = Ember.Controller.extend
   pinNumbers: null
   pinNumber: null
   record: null
+  
+  setupMobile: (->
+    console.log(window.mobilecheck())
+    @set('isMobile', window.mobilecheck())
+  )
 
   # emberdata doesn't track dirt on relationships 
   isRelationDirty: false  
+
+  isCheckedChanged: (->
+    isChecked = @get('isChecked')
+    console.log isChecked
+  ).observes('isChecked')
 
   getTransmitters: ->
     userid = @get('controllers.application.currentUser').id
@@ -75,9 +87,9 @@ App.SensorsSensorController = Ember.Controller.extend
           @set('isRelationDirty', false)
           @set('theFormula', @get('model.formula'))
     
-    ledRed: ->
-      @socket.emit 'led', { red: @get('red')}
-      @set('red', !@get('red'))
+    led: (pin, isChecked)->
+      console.log(pin.get('name'))
+      console.log(isChecked)
 
     ledGreen: ->
       @socket.emit 'led', { green: @get('green')}

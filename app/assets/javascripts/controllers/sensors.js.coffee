@@ -3,6 +3,13 @@ App.SensorsController = Ember.ArrayController.extend
 
   name: 'Dan'
   age: 16
+  height: (->
+    if window.mobilecheck()
+      return 200
+    else 
+      return 500
+  )()
+
 
   sockets: 
     cherryPickedName: (name, age) ->

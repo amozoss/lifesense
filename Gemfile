@@ -36,6 +36,7 @@ gem 'rails-assets-highcharts'
 gem 'rails-assets-mathjs'
 gem 'rails-assets-moment'
 gem 'rails-assets-marked'
+gem 'rails-assets-bootstrap-switch'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do

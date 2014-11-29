@@ -16,7 +16,7 @@
       link-to "posts.new" classNames="new btn btn-primary" | New Post
       br
     .list-group
-      collection Ember.ListView contentBinding="filteredContent" height=500 rowHeight=1
+      collection Ember.ListView contentBinding="filteredContent" height=height rowHeight=1
         link-to 'posts.post' content classNames="list-group-item"
           | #{=format-date updated_at "MMM DD" } #{title}
   .col-sm-8
