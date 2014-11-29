@@ -1,7 +1,7 @@
 line-time-series-chart chartId='sensed' title=model.name data=data formula=theFormula record=record
 
-/ul
-/each pin in pinNumbers
+ul
+each pin in pinNumbers
   li 
     view App.BootstrapSwitch controller=controller pin=pin
 p

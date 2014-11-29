@@ -31,7 +31,6 @@ window.App = Ember.Application.create(
 $.cookie.json = true
 
 
-
 window.mobilecheck = ->
   check = false
   ((a, b) ->

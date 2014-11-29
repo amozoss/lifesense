@@ -11,11 +11,6 @@ App.SensorsSensorController = Ember.Controller.extend
   pinNumber: null
   record: null
   
-  setupMobile: (->
-    console.log(window.mobilecheck())
-    @set('isMobile', window.mobilecheck())
-  )
-
   # emberdata doesn't track dirt on relationships
   isRelationDirty: false
 
@@ -71,10 +66,6 @@ App.SensorsSensorController = Ember.Controller.extend
   showUnsavedMessage: ( ->
     !@get('model.isSaving') and (@get('model.isDirty') or @get('isRelationDirty'))
   ).property('model.isDirty', 'model.isSaving', 'isRelationDirty')
-
-  red: false
-  blue: false
-  green: false
 
   # Possibly Keep and modify to delete and individual record
   actions:
