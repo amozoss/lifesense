@@ -8,30 +8,36 @@ class Api::V2::RecordsController < ApplicationController
   end
 
   def create
-		# TODO send error messages
+    # TODO send error messages
     puts "*********************************************"
     puts record_params
     transmitter = Transmitter.find_by(transmitter_token: record_params["transmitter_token"]) 
+    user = User.where(id: transmitter.user_id).first
 
     pin_number = transmitter.pin_numbers.find_by(name: record_params["pin_number"])
     sensor = pin_number.sensor if pin_number
+
     if sensor
       @record = sensor.records.build(time_stamp: DateTime.now.to_i * 1000, value: record_params["value"])
-      @record.save
+      if @record.save
+        # SEND EMAIL
+        # TODO add check if new record value is within sensor bounds
+        RecordMailer.hello_world(user).deliver
+      end
     end
 
     respond_with :api, status: :created, json: @record
   end
 
-	def update
-		respond_with record.update(transmitter_params)
-	end
+  def update
+    respond_with record.update(transmitter_params)
+  end
 
   def destroy
     respond_with record.destroy
   end
 
-  private 
+  private
 
   def record
     Record.find(params[:id])

@@ -3,9 +3,8 @@ tag = Tag.create!(name: "LifeSense")
   title  = Faker::Lorem.phrase
   content = Faker::Lorem.paragraph
 
-  
   name = Faker::Color.name
   post = Post.create!(title:  title,
-                    content: content, 
+                    content: content,
                      tag: tag)
 end

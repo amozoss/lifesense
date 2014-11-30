@@ -61,6 +61,26 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  # @TODO run these commands to get email on heroku
+  # heroku addons:add sendgrid:starter
+  # heroku config:set SENDGRID_USERNAME=<insert username>
+  # heroku config:set SENDGRID_PASSWORD=<insert password>
+  # Check this using
+  # heroku config:get SENDGRID_USERNAME
+  # heroku config:get SENDGRID_PASSWORD
+  config.action_mailer.default_url_options = { host: 'www.lifesense.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.sendgrid.net',
+    :port => '587',
+    :authentication => :plain,
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'heroku.com',
+    :enable_starttls_auto => true
+  }
+
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
