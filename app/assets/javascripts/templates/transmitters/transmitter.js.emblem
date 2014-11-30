@@ -19,7 +19,7 @@ if model.isSaving
       .col-sm-4
         label 
           pin.sensor.name
-        bootstrap-switch-led isLED=pin.sensor.led size="large"
+        bootstrap-switch-led isLED=pin.sensor.led size="large" pinName=pin.name action="led" leds=leds
 .row
   h3 Sensors
   ul
