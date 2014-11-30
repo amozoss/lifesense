@@ -1,6 +1,14 @@
 h1 Live Sensors
 
-each sensor in model
-  unless sensor.led
-    .col-sm-4
-      line-time-series-chart chartId=sensor.name title=sensor.name sensorData=sensorData pin=sensor.pin_number
+.col-sm-8
+  each sensor in model
+    unless sensor.led
+      .col-sm-6
+        line-time-series-chart chartId=sensor.id title=sensor.name sensorData=sensorData pin=sensor.pin_number
+.col-sm-4
+  each sensor in model
+    if sensor.led
+      .col-sm-6
+        label
+          sensor.name
+        bootstrap-switch-led isLED=sensor.led size="large" pinName=sensor.pin_number.name action="led" leds=leds transToken=sensor.pin_number.transmitter.transmitter_token

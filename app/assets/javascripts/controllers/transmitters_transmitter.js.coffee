@@ -14,9 +14,8 @@ App.TransmittersTransmitterController = Ember.Controller.extend
       @get('model').destroyRecord().then =>
         @transitionToRoute 'transmitters'
 
-    led: (isOn, pinName) ->
-      transmitterToken = @get('model.transmitter_token')
-      @socket.emit('led', { transmitter_token: transmitterToken, pin_name: pinName, value: isOn})
+    led: (isOn, pinName, transToken) ->
+      @socket.emit('led', { transmitter_token: transToken, pin_name: pinName, value: isOn})
 
     saveChanges: ->
       @get('model').save() if @get('model.isDirty')

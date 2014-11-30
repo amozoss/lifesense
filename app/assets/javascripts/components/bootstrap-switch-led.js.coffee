@@ -23,4 +23,4 @@ App.BootstrapSwitchLedComponent = Ember.Component.extend
     @$("[type='checkbox']").bootstrapSwitch('state', @get('isLED'))
     self = @
     @$("[type='checkbox']").on "switchChange.bootstrapSwitch", (e, data)->
-      self.sendAction('action', data, self.get('pinName'))
+      self.sendAction('action', data, self.get('pinName'), self.get('transToken'))

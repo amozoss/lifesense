@@ -1,5 +1,9 @@
 App.UserLiveController = Ember.Controller.extend
   sensorData: null
+  actions:
+    led: (isOn, pinName, transToken) ->
+      @socket.emit('led', { transmitter_token: transToken, pin_name: pinName, value: isOn})
+
   sockets: 
     live: (data) ->
       @set('sensorData', data)
