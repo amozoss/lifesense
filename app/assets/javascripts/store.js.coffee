@@ -35,3 +35,13 @@ App.PostSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     tag: { embedded: 'always' }
   }
 })
+
+Ember.View.reopen({
+  didInsertElement: ->
+    @_super()
+    Ember.run.scheduleOnce "afterRender", @, @afterRenderEvent
+    return
+
+  afterRenderEvent: ->
+})
+

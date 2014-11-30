@@ -1,8 +1,6 @@
-line-time-series-chart chartId='sensed' title=model.name data=data formula=theFormula record=record
+unless isLED
+  line-time-series-chart chartId='sensed' title=model.name data=data formula=theFormula record=record
 
-a click=ledRed Toggle Red
-a click=ledBlue Toggle Blue
-a click=ledGreen Toggle Green
 p
   label Name:
   view Ember.TextField value=model.name
@@ -13,11 +11,15 @@ p
   label Pin Number:
   view Ember.Select content=pinNumbers optionValuePath="content" optionLabelPath="content.name" value=model.pin_number selection=pinNumber prompt="-"
 
-  label Formula:
-  view Ember.TextField value=model.formula
+  bootstrap-switch-led isLED=model.led action="led" labelText="Output" size="medium"
+  br
 
-  label Lower Bound:
-  view Ember.TextField value=model.lower
+  unless isLED
+    label Formula:
+    view Ember.TextField value=model.formula
+
+    label Lower Bound:
+    view Ember.TextField value=model.lower
 
 a.delete.btn.btn-primary click="delete" Delete
 a.btn.btn-primary click="saveChanges" Save

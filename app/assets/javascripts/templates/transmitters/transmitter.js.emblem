@@ -12,9 +12,21 @@ if showUnsavedMessage
 if model.isSaving
   .saving saving...
 
-h3 Sensors
-ul
-each pin in model.pin_numbers
-  if pin.sensor
-    li 
-      pin.sensor.name
+.row
+  h3 Outputs
+  each pin in model.pin_numbers
+    if pin.sensor.led
+      .col-sm-4
+        label 
+          pin.sensor.name
+        bootstrap-switch-led isLED=pin.sensor.led size="large" pinName=pin.name action="led" leds=leds
+.row
+  h3 Sensors
+  ul
+  each pin in model.pin_numbers
+    if pin.sensor
+      unless pin.sensor.led
+        li 
+          pin.sensor.name
+
+
