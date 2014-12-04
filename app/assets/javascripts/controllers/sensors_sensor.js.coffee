@@ -40,10 +40,11 @@ App.SensorsSensorController = Ember.Controller.extend
 
   setupData: (->
     formula = @get('model.formula')
+    console.log('setupData')
     @get('model.records').then ((records)=>
       data = []
       for record in records.content
-        value = record.get('value')
+        value = record.get('y')
 
         scope = { x : value }
         calculated_value = null
@@ -53,8 +54,11 @@ App.SensorsSensorController = Ember.Controller.extend
         catch
           calculated_value = value
 
-        data.push([record.get('time_stamp'), calculated_value])
+        time = record.get 'x'
+        data.push({x:time,y: calculated_value})
+
       @set('data', data)
+#
     )
   ).observes('theFormula', 'record')
 

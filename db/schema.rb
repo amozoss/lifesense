@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129040730) do
+ActiveRecord::Schema.define(version: 20141204193404) do
 
   create_table "clockwork_database_events", force: true do |t|
     t.integer  "frequency_quantity"
@@ -49,14 +49,14 @@ ActiveRecord::Schema.define(version: 20141129040730) do
   add_index "posts", ["tag_id"], name: "index_posts_on_tag_id"
 
   create_table "records", force: true do |t|
-    t.integer  "time_stamp"
-    t.float    "value"
+    t.integer  "x"
+    t.float    "y"
     t.integer  "sensor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "records", ["sensor_id", "time_stamp"], name: "index_records_on_sensor_id_and_time_stamp"
+  add_index "records", ["sensor_id", "x"], name: "index_records_on_sensor_id_and_x"
   add_index "records", ["sensor_id"], name: "index_records_on_sensor_id"
 
   create_table "sensors", force: true do |t|

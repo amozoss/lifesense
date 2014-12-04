@@ -18,11 +18,11 @@ class Api::V2::RecordsController < ApplicationController
     sensor = pin_number.sensor if pin_number
 
     if sensor
-      @record = sensor.records.build(time_stamp: DateTime.now.to_i * 1000, value: record_params["value"])
+      @record = sensor.records.build(x: DateTime.now.to_i * 1000, y: record_params["y"])
       if @record.save
         # SEND EMAIL
         # TODO add check if new record value is within sensor bounds
-        RecordMailer.hello_world(user).deliver
+        #RecordMailer.hello_world(user).deliver
       end
     end
 
@@ -48,7 +48,7 @@ class Api::V2::RecordsController < ApplicationController
     params.require(:record).require(:transmitter_token)
     params.require(:record).require(:pin_number)
     # setup for hash structure
-    params.require(:record).permit(:value, :time_stamp, :transmitter_token, :pin_number)
+    params.require(:record).permit(:y, :x, :transmitter_token, :pin_number)
   end
 
 end

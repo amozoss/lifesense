@@ -1,4 +1,4 @@
 App.Record = DS.Model.extend
-  time_stamp: DS.attr('number')
-  value: DS.attr('number')
+  x: DS.attr('number')
+  y: DS.attr('number')
   sensor: DS.belongsTo('sensor')

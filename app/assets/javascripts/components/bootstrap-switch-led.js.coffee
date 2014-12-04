@@ -1,6 +1,6 @@
 App.BootstrapSwitchLedComponent = Ember.Component.extend
   contentChanged: (->
-    @$("[type='checkbox']").bootstrapSwitch('state', @get('isLED'))
+    @$("[type='checkbox']").bootstrapSwitch('state', @get('isLED'), true)
   ).observes('isLED')
 
   setLeds: (->
@@ -9,7 +9,7 @@ App.BootstrapSwitchLedComponent = Ember.Component.extend
     transToken = @transToken
     if leds[transToken] 
       value = leds[transToken][pinName]
-      @$("[type='checkbox']").bootstrapSwitch('state', value)
+      @$("[type='checkbox']").bootstrapSwitch('state', value, true)
   ).observes('leds')
 
 

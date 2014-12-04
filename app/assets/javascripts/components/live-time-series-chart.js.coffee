@@ -1,10 +1,6 @@
-App.LineTimeSeriesChartComponent = Ember.Component.extend
+App.LiveTimeSeriesChartComponent = Ember.Component.extend
   tagName: 'div'
   classNames: ['highcharts']
-
-  contentChanged: (->
-    @rerender()
-  ).observes('data', 'formula')
 
   didInsertElement:( ->
     Highcharts.setOptions({
@@ -21,6 +17,15 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
       text: @get('title')
     }
     )).observes('title')
+
+  loadData: (->
+    chart = $("##{@chartId}").highcharts()
+    series = chart.series[0]
+    sensorData = @get('sensorData')
+    pin = @get('pin.name')
+    time = (new Date).getTime()
+    series.addPoint([time, sensorData[pin]],true, true)
+  ).observes('sensorData')
 
   draw: ->
     $("##{@chartId}").highcharts({
@@ -47,7 +52,16 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
       legend: { enabled: false },
       series: [{
         name: 'Data Value', # TODO dynamically get property
-        data: @data
+        data: (->
+          data = [] 
+          time = (new Date()).getTime()
+          for i in [-19..0]
+            data.push({
+              x: ( time + i * 1000), 
+              y: 42  
+            })   
+          return data
+        )()
       }]
     })
 

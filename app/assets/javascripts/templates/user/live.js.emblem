@@ -4,7 +4,7 @@ h1 Live Sensors
   each sensor in model
     unless sensor.led
       .col-sm-6
-        line-time-series-chart chartId=sensor.id title=sensor.name sensorData=sensorData pin=sensor.pin_number
+        live-time-series-chart chartId=sensor.id title=sensor.name sensorData=sensorData pin=sensor.pin_number
 .col-sm-4
   each sensor in model
     if sensor.led
