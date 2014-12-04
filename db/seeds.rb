@@ -63,7 +63,7 @@ day = 1
       user.sensors.each do |sensor|
         value = rand(3000)
         time_stamp = day.days.ago.to_i * 1000
-        sensor.records.create!(time_stamp: time_stamp, value:value)
+        sensor.records.create!(time_stamp: time_stamp, value: value)
         day += 1
       end
     end
