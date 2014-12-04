@@ -61,6 +61,7 @@ App.LineTimeSeriesChartComponent = Ember.Component.extend
           time = (new Date()).getTime()
           for i in [-19..0]
             data.push({
+              id: 22
               x: ( time + i * 1000), 
               y: 42  
             })   

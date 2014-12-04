@@ -6,13 +6,9 @@ App.BootstrapSwitchLedComponent = Ember.Component.extend
   setLeds: (->
     leds = @get('leds')
     pinName = @get('pinName')
-    if leds
-      value = leds[pinName]
-      if value
-        value = true
-      else
-        value = false
-
+    transToken = @transToken
+    if leds[transToken] 
+      value = leds[transToken][pinName]
       @$("[type='checkbox']").bootstrapSwitch('state', value)
   ).observes('leds')
 

@@ -91,9 +91,3 @@ App.SensorsSensorController = Ember.Controller.extend
         console.log(record)
         if @get('model').id == sensor.id
           @set('record', record)
-
-    connect: ->
-      console.log('Socket connected in sensors_sensor')
-
-    disconnect: ->
-      console.log('Socket disconnected')
