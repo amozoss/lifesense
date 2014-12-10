@@ -6,7 +6,8 @@ class RecordMailer < ActionMailer::Base
     @user = user
     @record = record
 
-    mail(to: 'zach.toolson@gmail.com', subject: 'LifeSense Data Record')
+    mail(to: 'zach.toolson@gmail.com', subject: 'lifesense data record')
+#    mail(to: 'amozoss', subject: 'lifesense data record')
 #    mail(to: @user.email, subject: 'LifeSense Data Record')
   end
 
