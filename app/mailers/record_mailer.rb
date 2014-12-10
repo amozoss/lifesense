@@ -11,7 +11,7 @@ class RecordMailer < ActionMailer::Base
 
   def hello_world(user)
     @user = user
-#    mail(to: 'zach.toolson@gmail.com', subject: 'LifeSense Data Record')
-    mail(to: @user.email, subject: 'LifeSense Data Record')
+    mail(to: 'zach.toolson@gmail.com', subject: 'LifeSense Data Record')
+#    mail(to: @user.email, subject: 'LifeSense Data Record')
   end
 end

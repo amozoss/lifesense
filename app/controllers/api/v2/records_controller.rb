@@ -18,15 +18,20 @@ class Api::V2::RecordsController < ApplicationController
     sensor = pin_number.sensor if pin_number
 
     if sensor
+      binding.pry
       @record = sensor.records.build(x: DateTime.now.to_i * 1000, y: record_params["y"])
       if @record.save
-        # evaluate sensor formula
-        calculator = Dentaku::Calculator.new
-        formula_value = calculator.evaluate(sensor.formula, x: @record.y)
+        # only send email if lower is a valid number
+        if sensor.lower.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true
+          # evaluate sensor formula
+          calculator = Dentaku::Calculator.new
+          formula_value = calculator.evaluate(sensor.formula, x: @record.y)
 
-        if formula_value && formula_value < sensor.lower.to_f
-          # SEND EMAIL
-          RecordMailer.send_record(user).deliver
+          if formula_value && formula_value < sensor.lower.to_f
+            # SEND EMAIL
+  #          RecordMailer.send_record(user).deliver
+          end
+          binding.pry
         end
       end
     end
