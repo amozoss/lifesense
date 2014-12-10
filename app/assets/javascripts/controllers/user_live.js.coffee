@@ -1,2 +1,6 @@
 App.UserLiveController = App.SocketController.extend
-  foo: null
+  needs: ['user_live_transmitters']
+
+  transmitters: Ember.computed.alias('controllers.user_live_transmitters')
+
+

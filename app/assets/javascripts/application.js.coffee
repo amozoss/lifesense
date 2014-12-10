@@ -21,7 +21,7 @@ window.App = Ember.Application.create(
   rootElement: '#ember-app'
 
   Socket: EmberSockets.extend({
-    host: '155.99.10.67'
+    host: window.location.hostname
     port: 4033
     controllers: ['socket', 'sensors_sensor', 'user_live', 'transmitters_transmitter']
     autoConnect: true

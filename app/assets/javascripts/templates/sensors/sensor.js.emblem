@@ -8,7 +8,7 @@ p
   label Transmitter:
   view Ember.Select content=transmitters optionValuePath="content" optionLabelPath="content.name" selection=transmitter value=transmitter prompt="-"
 
-  label Pin Number:
+  label Pin Name:
   view Ember.Select content=pinNumbers optionValuePath="content" optionLabelPath="content.name" value=model.pin_number selection=pinNumber prompt="-"
 
   bootstrap-switch-led isLED=model.led action="led" labelText="Output" size="medium"
