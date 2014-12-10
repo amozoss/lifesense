@@ -20,9 +20,14 @@ class Api::V2::RecordsController < ApplicationController
     if sensor
       @record = sensor.records.build(x: DateTime.now.to_i * 1000, y: record_params["y"])
       if @record.save
-        # SEND EMAIL
-        # TODO add check if new record value is within sensor bounds
-        #RecordMailer.hello_world(user).deliver
+        # evaluate sensor formula
+        calculator = Dentaku::Calculator.new
+        formula_value = calculator.evaluate(sensor.formula, x: @record.y)
+
+        if formula_value && formula_value < sensor.lower.to_f
+          # SEND EMAIL
+          RecordMailer.send_record(user).deliver
+        end
       end
     end
 
