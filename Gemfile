@@ -14,6 +14,12 @@ gem 'bcrypt',      '3.1.7'
 gem 'clockwork'
 gem 'curb'
 
+# For debugging
+gem 'pry'
+
+# For evaluting formula's serverside
+gem 'dentaku', '~> 1.2.1'
+
 # For email
 gem "letter_opener", :group => :development
 gem 'figaro'

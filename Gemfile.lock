@@ -48,6 +48,7 @@ GEM
     clockwork (1.1.0)
       activesupport
       tzinfo
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -56,6 +57,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     curb (0.8.6)
+    dentaku (1.2.1)
     ember-data-source (1.0.0.beta.12)
       ember-source
     ember-rails (0.15.0)
@@ -95,10 +97,15 @@ GEM
       launchy (~> 2.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.4.3)
     minitest (5.4.3)
     multi_json (1.10.1)
     pg (0.17.1)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (2.10.2)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
@@ -150,6 +157,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slop (3.6.0)
     socket.io-rails (1.2.1)
       railties (>= 3.1)
     spring (1.2.0)
@@ -186,6 +194,7 @@ DEPENDENCIES
   clockwork
   coffee-rails (~> 4.0.0)
   curb
+  dentaku (~> 1.2.1)
   ember-rails
   ember-source
   emblem-rails
@@ -195,6 +204,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   pg (= 0.17.1)
+  pry
   puma
   rails (= 4.1.6)
   rails-assets-bootstrap-switch
