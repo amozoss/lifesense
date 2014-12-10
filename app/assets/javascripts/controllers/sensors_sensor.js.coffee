@@ -40,7 +40,6 @@ App.SensorsSensorController = Ember.Controller.extend
 
   setupData: (->
     formula = @get('model.formula')
-    console.log('setupData')
     @get('model.records').then ((records)=>
       data = []
       for record in records.content

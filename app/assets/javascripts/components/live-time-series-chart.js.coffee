@@ -19,12 +19,26 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
     )).observes('title')
 
   loadData: (->
+    dataTransToken = @get('sensorData.transmitter_token')
+    transToken = @get('pin.transmitter.transmitter_token')
+    if dataTransToken != transToken
+      return
+
     chart = $("##{@chartId}").highcharts()
     series = chart.series[0]
-    sensorData = @get('sensorData')
     pin = @get('pin.name')
+    sensorData = @get('sensorData')
     time = (new Date).getTime()
-    series.addPoint([time, sensorData[pin]],true, true)
+    value = sensorData[pin]
+    scope = { x : value }
+    calculated_value = null
+    # apply the sensor formula
+    try
+      calculated_value = math.eval(@formula, scope)
+    catch
+      calculated_value = value
+      
+    series.addPoint([time, calculated_value],true, true)
   ).observes('sensorData')
 
   draw: ->
@@ -36,7 +50,7 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
       },
       title: { text:  @get('title') }, #{ text: 'Non Linear Sample Data' }, # Possibly dynamic
       subtitle: {
-        text: 'Click and drag the plot area to zoom in'
+        text: @get('pin.transmitter.name')
       },
       xAxis: {
         type: 'datetime',
