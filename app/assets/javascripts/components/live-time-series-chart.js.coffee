@@ -25,6 +25,8 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
       return
 
     chart = $("##{@chartId}").highcharts()
+    if typeof chart == 'undefined'
+      return
     series = chart.series[0]
     pin = @get('pin.name')
     sensorData = @get('sensorData')
