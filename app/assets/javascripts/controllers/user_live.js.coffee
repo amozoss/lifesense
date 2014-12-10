@@ -1,6 +1,6 @@
 App.UserLiveController = App.SocketController.extend
-  needs: ['user_live_sensors']
+  needs: ['user_live_transmitters']
 
-  sensors: Ember.computed.alias('controllers.user_live_sensors.arrangedContent')
+  transmitters: Ember.computed.alias('controllers.user_live_transmitters')
 
 
