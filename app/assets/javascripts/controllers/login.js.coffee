@@ -58,7 +58,7 @@ App.LoginController = Ember.Controller.extend
           self.transitionToRoute(attemptedTransition.targetName)
           self.set('attemptedTransition', null)
         else
-          self.transitionToRoute('sensors')
+          self.transitionToRoute('user.live')
 
       , (value) -> 
         self.set('errorMessage', value.responseText)

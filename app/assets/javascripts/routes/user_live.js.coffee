@@ -5,4 +5,5 @@ App.UserLiveRoute = App.AuthenticatedRoute.extend
   setupController: (controller, model) ->
     @_super(controller, model)
     controller.getLeds()
+    @controllerFor('user_live_sensors').set('model', model)
 
