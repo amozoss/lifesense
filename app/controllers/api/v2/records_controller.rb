@@ -20,13 +20,16 @@ class Api::V2::RecordsController < ApplicationController
     if sensor
       @record = sensor.records.build(x: DateTime.now.to_i * 1000, y: record_params["y"])
       if @record.save
-        # evaluate sensor formula
-        calculator = Dentaku::Calculator.new
-        formula_value = calculator.evaluate(sensor.formula, x: @record.y)
+        # only send email if lower is a valid number
+        if sensor.lower.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true
+          # evaluate sensor formula
+          calculator = Dentaku::Calculator.new
+          formula_value = calculator.evaluate(sensor.formula, x: @record.y)
 
-        if formula_value && formula_value < sensor.lower.to_f
-          # SEND EMAIL
-          RecordMailer.send_record(user).deliver
+          # Send email if formula_value is below sensor lower value
+          if formula_value && formula_value < sensor.lower.to_f
+            RecordMailer.send_record(user, @record).deliver
+          end
         end
       end
     end
