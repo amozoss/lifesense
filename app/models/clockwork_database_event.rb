@@ -1,5 +1,6 @@
 class ClockworkDatabaseEvent < ActiveRecord::Base
   belongs_to :frequency_period
+  has_one :sensor
 
   # Used by clockwork to schedule how frequently this event should be run
   # Should be the intended number of seconds between executions

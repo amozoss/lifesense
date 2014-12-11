@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204193404) do
+ActiveRecord::Schema.define(version: 20141211031333) do
 
   create_table "clockwork_database_events", force: true do |t|
     t.integer  "frequency_quantity"
@@ -67,9 +67,11 @@ ActiveRecord::Schema.define(version: 20141204193404) do
     t.datetime "updated_at"
     t.integer  "pin_number_id"
     t.string   "lower"
-    t.boolean  "led",           default: false
+    t.boolean  "led",                         default: false
+    t.integer  "clockwork_database_event_id"
   end
 
+  add_index "sensors", ["clockwork_database_event_id"], name: "index_sensors_on_clockwork_database_event_id"
   add_index "sensors", ["pin_number_id"], name: "index_sensors_on_pin_number_id"
   add_index "sensors", ["user_id"], name: "index_sensors_on_user_id"
   add_index "sensors", ["user_id"], name: "index_sensors_on_user_id_and_transmitter_id"

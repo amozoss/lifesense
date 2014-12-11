@@ -15,9 +15,8 @@ h1 Live Sensors
             bootstrap-switch-led isLED=pin.sensor.led size="large" pinName=pin.name action="led" leds=leds transToken=transmitter.transmitter_token
 .col-sm-8
   each transmitter in transmitters
-    .row.center
-      each pin in transmitter.pin_numbers
-        unless pin.sensor.led
-          .col-sm-6
-            live-time-series-chart chartId=pin.sensor.id title=pin.sensor.name sensorData=sensorData pin=pin formula=pin.sensor.formula
+    each pin in transmitter.pin_numbers
+      unless pin.sensor.led
+        .col-sm-6
+          live-time-series-chart chartId=pin.sensor.id title=pin.sensor.name sensorData=sensorData pin=pin formula=pin.sensor.formula
 
