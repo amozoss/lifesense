@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 20141212043054) do
     t.datetime "updated_at"
     t.integer  "pin_number_id"
     t.string   "lower"
-    t.string   "upper"
     t.boolean  "led",                         default: false
     t.integer  "clockwork_database_event_id"
+    t.string   "upper"
   end
 
   add_index "sensors", ["clockwork_database_event_id"], name: "index_sensors_on_clockwork_database_event_id"

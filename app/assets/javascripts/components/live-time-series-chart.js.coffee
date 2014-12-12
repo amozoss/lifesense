@@ -41,11 +41,6 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
     catch
       calculated_value = value
 
-    # TODO check this
-#    cvalue = @get('calculated_value')
-#    if cvalue == null || cvalue < calculated_value
-#      @set('calculated_value', calculated_value)
-
     series.addPoint([time, calculated_value],true, true)
   ).observes('sensorData')
 
@@ -70,7 +65,7 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
         title: {
           text: 'Data Values Units' # TODO make dynamic based on units
         },
-        max: @get('calculated_value')
+        min: 0
       },
       legend: { enabled: false },
       series: [{
