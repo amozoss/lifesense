@@ -18,7 +18,6 @@ class Api::V2::RecordsController < ApplicationController
     sensor = pin_number.sensor if pin_number
 
     if sensor
-      binding.pry
       @record = sensor.records.build(x: DateTime.now.to_i * 1000, y: record_params["y"])
       if @record.save
         # only send email if lower is a valid number
