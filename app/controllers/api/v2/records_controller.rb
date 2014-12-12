@@ -33,7 +33,7 @@ class Api::V2::RecordsController < ApplicationController
 
           # Send email if formula_value is below sensor lower value
           if formula_value && (formula_value < sensor.lower.to_f || formula_value > sensor.upper.to_f)
-            RecordMailer.send_record(user, @record).deliver
+            RecordMailer.send_record(user, @record, sensor).deliver
           end
         end
       end
