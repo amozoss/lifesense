@@ -27,7 +27,13 @@ class Api::V2::SensorsController < ApplicationController
     puts "*******************************88"
     puts param
     update_clockwork_database_event(cwde)
-    respond_with sensor.update_attributes(name: param["name"], pin_number_id: pin, formula: param["formula"], lower: param["lower"], led: param["led"])
+
+    respond_with sensor.update_attributes(name: param["name"],
+                                          pin_number_id: pin,
+                                          formula: param["formula"],
+                                          lower: param["lower"],
+                                          upper: param["upper"],
+                                          led: param["led"])
   end
 
   def destroy
@@ -41,7 +47,18 @@ class Api::V2::SensorsController < ApplicationController
   end
 
   def sensor_params
-    params.require(:sensor).permit(:id, :name, :formula,{ clockwork_database_event:[:at, :frequency_quantity, { frequency_period: [:id, :name] } ] }, :led, :lower, :user_id, pin_number: [:id])
+<<<<<<< HEAD
+    params.require(:sensor).permit(:id, :name, :formula,, :led, :lower, :user_id, pin_number: [:id])
+
+    params.require(:sensor).permit(:id,
+                                   :name,
+                                   :formula,
+                                   { clockwork_database_event:[:at, :frequency_quantity, { frequency_period: [:id, :name] } ] },
+                                   :led,
+                                   :lower,
+                                   :upper,
+                                   :user_id,
+                                   pin_number: [:id])
   end
 
   def update_clockwork_database_event(cw_params)
@@ -55,6 +72,5 @@ class Api::V2::SensorsController < ApplicationController
 
       puts cw
     end
-
   end
 end

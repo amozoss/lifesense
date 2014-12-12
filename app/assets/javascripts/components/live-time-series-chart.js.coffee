@@ -1,5 +1,6 @@
 App.LiveTimeSeriesChartComponent = Ember.Component.extend
   tagName: 'div'
+#  calculated_value: null
   classNames: ['highcharts']
 
   didInsertElement:( ->
@@ -10,7 +11,7 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
     })
     @draw()
   )
-  
+
   updateTitle: (->
     chart = $("##{@chartId}").highcharts()
     chart.setTitle({
@@ -39,13 +40,18 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
       calculated_value = math.eval(@formula, scope)
     catch
       calculated_value = value
-      
+
+    # TODO check this
+#    cvalue = @get('calculated_value')
+#    if cvalue == null || cvalue < calculated_value
+#      @set('calculated_value', calculated_value)
+
     series.addPoint([time, calculated_value],true, true)
   ).observes('sensorData')
 
   draw: ->
     $("##{@chartId}").highcharts({
-      chart: { 
+      chart: {
         type: 'spline',
         animation: Highcharts.svg,
         marginRight:10,
@@ -64,18 +70,19 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
         title: {
           text: 'Data Values Units' # TODO make dynamic based on units
         },
+        max: @get('calculated_value')
       },
       legend: { enabled: false },
       series: [{
         name: 'Data Value', # TODO dynamically get property
         data: (->
-          data = [] 
+          data = []
           time = (new Date()).getTime()
           for i in [-19..0]
             data.push({
-              x: ( time + i * 1000), 
-              y: 42  
-            })   
+              x: ( time + i * 1000),
+              y: 42
+            })
           return data
         )()
       }]

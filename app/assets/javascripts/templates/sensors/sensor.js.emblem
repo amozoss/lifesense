@@ -28,6 +28,9 @@ p
     label Lower Bound:
     view Ember.TextField value=model.lower
 
+    label Upper Bound:
+    view Ember.TextField value=model.upper
+
 a.delete.btn.btn-primary click="delete" Delete
 a.btn.btn-primary click="saveChanges" Save
 if showUnsavedMessage

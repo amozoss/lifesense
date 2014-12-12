@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211031333) do
+ActiveRecord::Schema.define(version: 20141212043054) do
 
   create_table "clockwork_database_events", force: true do |t|
     t.integer  "frequency_quantity"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20141211031333) do
     t.datetime "updated_at"
     t.integer  "pin_number_id"
     t.string   "lower"
+    t.string   "upper"
     t.boolean  "led",                         default: false
     t.integer  "clockwork_database_event_id"
   end
