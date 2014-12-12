@@ -2,6 +2,19 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
   tagName: 'div'
 #  calculated_value: null
   classNames: ['highcharts']
+  sensor: Ember.computed.alias('pin.sensor')
+
+
+  actions: {
+    recordValue: ->
+      transToken = @get('pin.transmitter.transmitter_token')
+      pinName = @get('pin.name')
+      @sendAction('recordValue', pinName, transToken)
+
+    sensor: ->
+      sensor = @get('pin.sensor')
+      @sendAction('action', sensor)
+  }
 
   didInsertElement:( ->
     Highcharts.setOptions({

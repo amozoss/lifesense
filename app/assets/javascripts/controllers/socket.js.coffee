@@ -9,6 +9,7 @@ App.SocketController = Ember.Controller.extend
     led: (isOn, pinName, transToken) ->
       @socket.emit('led', { transmitter_token: transToken, pin_name: pinName, value: isOn})
 
+
   sockets: 
     leds: (data) ->
       @set('leds', data)

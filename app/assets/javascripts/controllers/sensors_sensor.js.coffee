@@ -10,6 +10,8 @@ App.SensorsSensorController = Ember.Controller.extend
   pinNumber: null
   record: null
 
+
+
   isLED: Ember.computed.alias('model.led')
   
   # emberdata doesn't track dirt on relationships

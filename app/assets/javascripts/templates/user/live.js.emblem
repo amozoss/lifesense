@@ -18,5 +18,5 @@ h1 Live Sensors
     each pin in transmitter.pin_numbers
       unless pin.sensor.led
         .col-sm-6
-          live-time-series-chart chartId=pin.sensor.id title=pin.sensor.name sensorData=sensorData pin=pin formula=pin.sensor.formula
+          live-time-series-chart chartId=pin.sensor.id title=pin.sensor.name sensorData=sensorData pin=pin formula=pin.sensor.formula recordValue="recordValue"
 
