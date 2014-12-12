@@ -21,18 +21,35 @@ class Api::V2::RecordsController < ApplicationController
     if sensor
       @record = sensor.records.build(x: DateTime.now.to_i * 1000, y: record_params["y"])
       if @record.save
+
         # only send email if lower is a valid number
-        if (sensor.lower && sensor.upper && sensor.lower.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true) || (sensor.upper.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true)
+        if sensor.lower && (sensor.lower.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true)
           # evaluate sensor formula
           calculator = Dentaku::Calculator.new
           if sensor.formula
             formula_value = calculator.evaluate(sensor.formula, x: @record.y)
-          else 
+          else
             formula_value = calculator.evaluate("x", x: @record.y)
           end
 
           # Send email if formula_value is below sensor lower value
-          if formula_value && (formula_value < sensor.lower.to_f || formula_value > sensor.upper.to_f)
+          if formula_value && formula_value < sensor.lower.to_f
+            RecordMailer.send_record(user, @record, sensor).deliver
+          end
+        end
+
+        # only send email if upper is a valid number
+        if sensor.upper && (sensor.upper.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true)
+          # evaluate sensor formula
+          calculator = Dentaku::Calculator.new
+          if sensor.formula
+            formula_value = calculator.evaluate(sensor.formula, x: @record.y)
+          else
+            formula_value = calculator.evaluate("x", x: @record.y)
+          end
+
+          # Send email if formula_value is above sensor upper value
+          if formula_value && formula_value > sensor.upper.to_f
             RecordMailer.send_record(user, @record, sensor).deliver
           end
         end
