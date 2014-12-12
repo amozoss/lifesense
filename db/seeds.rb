@@ -53,7 +53,8 @@ end
       name = Faker::Color.name
       formula = Faker::Education.degree
       lower_bound = rand(3000)
-      user.sensors.create!(name: name, formula: formula, lower: lower_bound)
+      upper_bound = rand(3000)
+      user.sensors.create!(name: name, formula: formula, lower: lower_bound, upper: upper_bound)
     end
 end
 
