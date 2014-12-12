@@ -2,9 +2,10 @@ class RecordMailer < ActionMailer::Base
 #  default from: "data@lifesense.com"
   default :from => 'no-reply@lifesense.herokuapp.com'
 
-  def send_record(user, record)
+  def send_record(user, record, sensor)
     @user = user
     @record = record
+    @sensor = sensor
 
     mail(to: 'zach.toolson@gmail.com', subject: 'lifesense data record')
 #    mail(to: 'amozoss', subject: 'lifesense data record')
