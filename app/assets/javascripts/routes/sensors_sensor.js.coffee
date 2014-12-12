@@ -5,5 +5,6 @@ App.SensorsSensorRoute = App.AuthenticatedRoute.extend
   setupController: (controller, model) ->
     controller.set('model', model)
     controller.getTransmitters()
+    controller.getFrequencyPeriods()
     controller.setupData()
 

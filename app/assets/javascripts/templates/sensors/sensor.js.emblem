@@ -14,9 +14,16 @@ p
   bootstrap-switch-led isLED=model.led action="led" labelText="Output" size="medium"
   br
 
+
   unless isLED
     label Formula:
     view Ember.TextField value=model.formula
+
+    label Frequency Quantity:
+    view Ember.TextField value=model.clockwork_database_event.frequency_quantity
+
+    label Frequency Period:
+    view Ember.Select content=frequencyPeriods optionValuePath="content" optionLabelPath="content.name" value=model.clockwork_database_event.frequency_period selection=model.clockwork_database_event.frequency_period prompt="-"
 
     label Lower Bound:
     view Ember.TextField value=model.lower

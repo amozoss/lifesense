@@ -21,12 +21,19 @@ App.SensorSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
     records: { embedded: 'always' }
     pin_number: { embedded: 'always' }
+    clockwork_database_event: { embedded: 'always' }
   }
 })
 
 App.TransmitterSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
     pin_numbers: { embedded: 'always' }
+  }
+})
+
+App.ClockworkDatabaseEventSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
+  attrs: {
+    frequency_period: { embedded: 'always' }
   }
 })
 

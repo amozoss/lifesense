@@ -3,6 +3,7 @@ App.SensorsSensorController = Ember.Controller.extend
 
   theFormula: null
   data: null
+  frequencyPeriods: null
   transmitters: null
   transmitter: null
   pinNumbers: null
@@ -13,6 +14,11 @@ App.SensorsSensorController = Ember.Controller.extend
   
   # emberdata doesn't track dirt on relationships
   isRelationDirty: false
+
+  getFrequencyPeriods: ->
+    @store.find('frequency_period').then (frequencyPeriods)=>
+      console.log frequencyPeriods
+      @set('frequencyPeriods', frequencyPeriods.content)
 
   getTransmitters: ->
     userid = @get('controllers.application.currentUser').id
