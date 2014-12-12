@@ -47,8 +47,6 @@ class Api::V2::SensorsController < ApplicationController
   end
 
   def sensor_params
-<<<<<<< HEAD
-    params.require(:sensor).permit(:id, :name, :formula,, :led, :lower, :user_id, pin_number: [:id])
 
     params.require(:sensor).permit(:id,
                                    :name,
