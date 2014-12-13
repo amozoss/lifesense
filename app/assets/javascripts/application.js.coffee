@@ -21,8 +21,8 @@ window.App = Ember.Application.create(
   rootElement: '#ember-app'
 
   Socket: EmberSockets.extend({
-    host: window.location.hostname
-    port: 4033
+    host: "lifesense-node.herokuapp.com"
+    port: 80
     controllers: ['socket', 'sensors_sensor', 'user_live', 'transmitters_transmitter']
     autoConnect: true
   })
