@@ -89,7 +89,7 @@ App.LiveTimeSeriesChartComponent = Ember.Component.extend
           for i in [-19..0]
             data.push({
               x: ( time + i * 1000),
-              y: 42
+              y: 0
             })
           return data
         )()
