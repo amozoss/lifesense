@@ -1,0 +1,138 @@
+\contentsline {section}{\numberline {1}Introduction}{6}{section.1}
+\contentsline {section}{\numberline {2}Background}{6}{section.2}
+\contentsline {section}{\numberline {3}Project Implementation}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Printed Circuit Board}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Ruby on Rails}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Ember}{9}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Node}{9}{subsection.3.4}
+\contentsline {section}{\numberline {4}Evaluation}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Printed Circuit Board}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Ruby on Rails}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Ember}{11}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Node}{11}{subsection.4.4}
+\contentsline {section}{\numberline {5}Conclusion}{12}{section.5}
+\contentsline {section}{\numberline {A}Tutorials}{13}{Appendix.a.A}
+\contentsline {section}{\numberline {B}Discoveries and pitfalls}{13}{Appendix.a.B}
+\contentsline {section}{\numberline {C}Ruby on Rails Source Code}{13}{Appendix.a.C}
+\contentsline {subsection}{\numberline {C.1}Gemfile}{13}{subsection.a.C.1}
+\contentsline {subsection}{\numberline {C.2}app/controllers/application\textunderscore controller.rb}{15}{subsection.a.C.2}
+\contentsline {subsection}{\numberline {C.3}app/controllers/api/v2/frequency\textunderscore periods\textunderscore controller.rb}{15}{subsection.a.C.3}
+\contentsline {subsection}{\numberline {C.4}app/controllers/api/v2/posts\textunderscore controller.rb}{16}{subsection.a.C.4}
+\contentsline {subsection}{\numberline {C.5}app/controllers/api/v2/records\textunderscore controller.rb}{17}{subsection.a.C.5}
+\contentsline {subsection}{\numberline {C.6}app/controllers/api/v2/sensors\textunderscore controller.rb}{19}{subsection.a.C.6}
+\contentsline {subsection}{\numberline {C.7}app/controllers/api/v2/tags\textunderscore controller.rb}{21}{subsection.a.C.7}
+\contentsline {subsection}{\numberline {C.8}app/controllers/api/v2/transmitters\textunderscore controller.rb}{22}{subsection.a.C.8}
+\contentsline {subsection}{\numberline {C.9}app/controllers/api/v2/users\textunderscore controller.rb}{23}{subsection.a.C.9}
+\contentsline {subsection}{\numberline {C.10}app/constraints/api\textunderscore constraint.rb}{24}{subsection.a.C.10}
+\contentsline {subsection}{\numberline {C.11}app/mailers/record\textunderscore mailer.rb}{25}{subsection.a.C.11}
+\contentsline {subsection}{\numberline {C.12}app/models/clockwork\textunderscore database\textunderscore event.rb}{25}{subsection.a.C.12}
+\contentsline {subsection}{\numberline {C.13}app/models/frequency\textunderscore period.rb}{26}{subsection.a.C.13}
+\contentsline {subsection}{\numberline {C.14}app/models/pin\textunderscore number.rb}{26}{subsection.a.C.14}
+\contentsline {subsection}{\numberline {C.15}app/models/post.rb}{26}{subsection.a.C.15}
+\contentsline {subsection}{\numberline {C.16}app/models/record.rb}{26}{subsection.a.C.16}
+\contentsline {subsection}{\numberline {C.17}app/models/sensor.rb}{26}{subsection.a.C.17}
+\contentsline {subsection}{\numberline {C.18}app/models/tag.rb}{26}{subsection.a.C.18}
+\contentsline {subsection}{\numberline {C.19}app/models/transmitter.rb}{27}{subsection.a.C.19}
+\contentsline {subsection}{\numberline {C.20}app/models/user.rb}{27}{subsection.a.C.20}
+\contentsline {subsection}{\numberline {C.21}app/serializers/clockwork\textunderscore database\textunderscore event\textunderscore serializer.rb}{27}{subsection.a.C.21}
+\contentsline {subsection}{\numberline {C.22}app/serializers/frequency\textunderscore period\textunderscore serializer.rb}{28}{subsection.a.C.22}
+\contentsline {subsection}{\numberline {C.23}app/serializers/pin\textunderscore number\textunderscore serializer.rb}{28}{subsection.a.C.23}
+\contentsline {subsection}{\numberline {C.24}app/serializers/post\textunderscore serializer.rb}{28}{subsection.a.C.24}
+\contentsline {subsection}{\numberline {C.25}app/serializers/record\textunderscore serializer.rb}{28}{subsection.a.C.25}
+\contentsline {subsection}{\numberline {C.26}app/serializers/sensor\textunderscore serializer.rb}{28}{subsection.a.C.26}
+\contentsline {subsection}{\numberline {C.27}app/serializers/tag\textunderscore serializer.rb}{28}{subsection.a.C.27}
+\contentsline {subsection}{\numberline {C.28}app/serializers/transmitter\textunderscore serializer.rb}{29}{subsection.a.C.28}
+\contentsline {subsection}{\numberline {C.29}app/serializers/user\textunderscore serializer.rb}{29}{subsection.a.C.29}
+\contentsline {subsection}{\numberline {C.30}config/routes.rb}{29}{subsection.a.C.30}
+\contentsline {subsection}{\numberline {C.31}config/routes.rb}{30}{subsection.a.C.31}
+\contentsline {subsection}{\numberline {C.32}config/environment.rb}{30}{subsection.a.C.32}
+\contentsline {subsection}{\numberline {C.33}db/schema.rb}{31}{subsection.a.C.33}
+\contentsline {subsection}{\numberline {C.34}db/seeds.rb}{33}{subsection.a.C.34}
+\contentsline {section}{\numberline {D}Source code of Ember}{35}{Appendix.a.D}
+\contentsline {subsection}{\numberline {D.1}js/application.js.coffee}{35}{subsection.a.D.1}
+\contentsline {subsection}{\numberline {D.2}js/components/bootstrap-switch-led.js.coffee}{36}{subsection.a.D.2}
+\contentsline {subsection}{\numberline {D.3}js/components/line-time-series-chart.js.coffee}{37}{subsection.a.D.3}
+\contentsline {subsection}{\numberline {D.4}js/components/live-time-series-chart.js.coffee}{38}{subsection.a.D.4}
+\contentsline {subsection}{\numberline {D.5}js/controllers/application.js.coffee}{40}{subsection.a.D.5}
+\contentsline {subsection}{\numberline {D.6}js/controllers/home.js.coffee}{41}{subsection.a.D.6}
+\contentsline {subsection}{\numberline {D.7}js/controllers/login.js.coffee}{41}{subsection.a.D.7}
+\contentsline {subsection}{\numberline {D.8}js/controllers/posts.js.coffee}{42}{subsection.a.D.8}
+\contentsline {subsection}{\numberline {D.9}js/controllers/posts\textunderscore new.js.coffee}{44}{subsection.a.D.9}
+\contentsline {subsection}{\numberline {D.10}js/controllers/posts\textunderscore post\textunderscore edit.js.coffee}{45}{subsection.a.D.10}
+\contentsline {subsection}{\numberline {D.11}js/controllers/posts\textunderscore post.js.coffee}{45}{subsection.a.D.11}
+\contentsline {subsection}{\numberline {D.12}js/controllers/sensors.js.coffee}{45}{subsection.a.D.12}
+\contentsline {subsection}{\numberline {D.13}js/controllers/sensors\textunderscore new.js.coffee}{45}{subsection.a.D.13}
+\contentsline {subsection}{\numberline {D.14}js/controllers/sensors\textunderscore sensor.js.coffee}{46}{subsection.a.D.14}
+\contentsline {subsection}{\numberline {D.15}js/controllers/signup.js.coffee}{48}{subsection.a.D.15}
+\contentsline {subsection}{\numberline {D.16}js/controllers/socket.js.coffee}{49}{subsection.a.D.16}
+\contentsline {subsection}{\numberline {D.17}js/controllers/transmitters.js.coffee}{50}{subsection.a.D.17}
+\contentsline {subsection}{\numberline {D.18}js/controllers/transmitters\textunderscore new.js.coffee}{50}{subsection.a.D.18}
+\contentsline {subsection}{\numberline {D.19}js/controllers/transmitters\textunderscore transmitter.js.coffee}{50}{subsection.a.D.19}
+\contentsline {subsection}{\numberline {D.20}js/controllers/user.js.coffee}{51}{subsection.a.D.20}
+\contentsline {subsection}{\numberline {D.21}js/controllers/user\textunderscore live.js.coffee}{51}{subsection.a.D.21}
+\contentsline {subsection}{\numberline {D.22}js/controllers/user\textunderscore live\textunderscore transmitters.js.coffee}{51}{subsection.a.D.22}
+\contentsline {subsection}{\numberline {D.23}js/controllers/users.js.coffee}{51}{subsection.a.D.23}
+\contentsline {subsection}{\numberline {D.24}js/controllers/users\textunderscore new.js.coffee}{52}{subsection.a.D.24}
+\contentsline {subsection}{\numberline {D.25}js/helpers/format\textunderscore date.js.coffee}{52}{subsection.a.D.25}
+\contentsline {subsection}{\numberline {D.26}js/helpers/get\textunderscore element.js.coffee}{52}{subsection.a.D.26}
+\contentsline {subsection}{\numberline {D.27}js/helpers/markdown.js.coffee}{52}{subsection.a.D.27}
+\contentsline {subsection}{\numberline {D.28}js/helpers/sensor\textunderscore name.js.coffee}{53}{subsection.a.D.28}
+\contentsline {subsection}{\numberline {D.29}js/models/clockwork\textunderscore database\textunderscore event.js.coffee}{53}{subsection.a.D.29}
+\contentsline {subsection}{\numberline {D.30}js/models/frequency\textunderscore period}{53}{subsection.a.D.30}
+\contentsline {subsection}{\numberline {D.31}js/models/pin\textunderscore number}{53}{subsection.a.D.31}
+\contentsline {subsection}{\numberline {D.32}js/models/post.js.coffee}{53}{subsection.a.D.32}
+\contentsline {subsection}{\numberline {D.33}js/models/record.js.coffee}{53}{subsection.a.D.33}
+\contentsline {subsection}{\numberline {D.34}js/models/sensor.js.coffee}{54}{subsection.a.D.34}
+\contentsline {subsection}{\numberline {D.35}js/models/tag.js.coffee}{54}{subsection.a.D.35}
+\contentsline {subsection}{\numberline {D.36}js/models/transmitter.js.coffee}{54}{subsection.a.D.36}
+\contentsline {subsection}{\numberline {D.37}js/models/user.js.coffee}{54}{subsection.a.D.37}
+\contentsline {subsection}{\numberline {D.38}js/models/router.js.coffee}{54}{subsection.a.D.38}
+\contentsline {subsection}{\numberline {D.39}js/routes/application.js.coffee}{55}{subsection.a.D.39}
+\contentsline {subsection}{\numberline {D.40}js/routes/posts\textunderscore new.js.coffee}{55}{subsection.a.D.40}
+\contentsline {subsection}{\numberline {D.41}js/routes/transmitters\textunderscore transmitter.js.coffee}{55}{subsection.a.D.41}
+\contentsline {subsection}{\numberline {D.42}js/routes/authenticated.js.coffee}{56}{subsection.a.D.42}
+\contentsline {subsection}{\numberline {D.43}js/routes/posts\textunderscore post\textunderscore edit.js.coffee}{56}{subsection.a.D.43}
+\contentsline {subsection}{\numberline {D.44}js/routes/user.js.coffee}{56}{subsection.a.D.44}
+\contentsline {subsection}{\numberline {D.45}js/routes/home.js.coffee}{57}{subsection.a.D.45}
+\contentsline {subsection}{\numberline {D.46}js/routes/sensors.js.coffee}{57}{subsection.a.D.46}
+\contentsline {subsection}{\numberline {D.47}js/routes/user\textunderscore live.js.coffee}{57}{subsection.a.D.47}
+\contentsline {subsection}{\numberline {D.48}js/routes/login.js.coffee}{57}{subsection.a.D.48}
+\contentsline {subsection}{\numberline {D.49}js/routes/sensors\textunderscore sensor.js.coffee}{58}{subsection.a.D.49}
+\contentsline {subsection}{\numberline {D.50}js/routes/users.js.coffee}{58}{subsection.a.D.50}
+\contentsline {subsection}{\numberline {D.51}js/routes/posts.js.coffee}{58}{subsection.a.D.51}
+\contentsline {subsection}{\numberline {D.52}js/routes/transmitters.js.coffee}{58}{subsection.a.D.52}
+\contentsline {subsection}{\numberline {D.53}js/store.js.coffee}{58}{subsection.a.D.53}
+\contentsline {subsection}{\numberline {D.54}js/templates/application.js.emblem }{60}{subsection.a.D.54}
+\contentsline {subsection}{\numberline {D.55}js/templates/home.js.emblem}{61}{subsection.a.D.55}
+\contentsline {subsection}{\numberline {D.56}js/templates/posts.js.emblem}{61}{subsection.a.D.56}
+\contentsline {subsection}{\numberline {D.57}js/templates/blog.js.emblem}{62}{subsection.a.D.57}
+\contentsline {subsection}{\numberline {D.58}js/templates/components/bootstrap-switch-led.js.emblem}{62}{subsection.a.D.58}
+\contentsline {subsection}{\numberline {D.59}js/templates/components/line-time-series-chart.js.emblem}{62}{subsection.a.D.59}
+\contentsline {subsection}{\numberline {D.60}js/templates/components/live-time-series-chart.js.emblem}{62}{subsection.a.D.60}
+\contentsline {subsection}{\numberline {D.61}js/templates/loading.js.emblem}{62}{subsection.a.D.61}
+\contentsline {subsection}{\numberline {D.62}js/templates/transmitters.js.emblem}{62}{subsection.a.D.62}
+\contentsline {subsection}{\numberline {D.63}js/templates/users.js.emblem}{63}{subsection.a.D.63}
+\contentsline {subsection}{\numberline {D.64}js/templates/login.js.emblem}{63}{subsection.a.D.64}
+\contentsline {subsection}{\numberline {D.65}js/templates/sensors.js.emblem}{63}{subsection.a.D.65}
+\contentsline {subsection}{\numberline {D.66}js/templates/help.js.emblem}{63}{subsection.a.D.66}
+\contentsline {subsection}{\numberline {D.67}js/templates/signup.js.emblem}{64}{subsection.a.D.67}
+\contentsline {subsection}{\numberline {D.68}js/templates/user.js.emblem}{64}{subsection.a.D.68}
+\contentsline {subsection}{\numberline {D.69}js/templates/posts/post.js.emblem}{64}{subsection.a.D.69}
+\contentsline {subsection}{\numberline {D.70}js/templates/posts/new.js.emblem}{65}{subsection.a.D.70}
+\contentsline {subsection}{\numberline {D.71}js/templates/posts/post/edit.js.emblem}{65}{subsection.a.D.71}
+\contentsline {subsection}{\numberline {D.72}js/templates/sensors/new.js.emblem}{65}{subsection.a.D.72}
+\contentsline {subsection}{\numberline {D.73}js/templates/sensors/sensor.js.emblem}{66}{subsection.a.D.73}
+\contentsline {subsection}{\numberline {D.74}js/templates/transmitters/new.js.emblem}{67}{subsection.a.D.74}
+\contentsline {subsection}{\numberline {D.75}js/templates/transmitters/transmitter.js.emblem}{68}{subsection.a.D.75}
+\contentsline {subsection}{\numberline {D.76}js/templates/user/live.js.emblem}{68}{subsection.a.D.76}
+\contentsline {subsection}{\numberline {D.77}js/templates/user/sensors.js.emblem}{69}{subsection.a.D.77}
+\contentsline {subsection}{\numberline {D.78}js/templates/users/new.js.emblem}{69}{subsection.a.D.78}
+\contentsline {subsection}{\numberline {D.79}js/templates/views/bootstrap-switch.js.emblem}{69}{subsection.a.D.79}
+\contentsline {subsection}{\numberline {D.80}js/views/bootstrap\textunderscore switch.js.coffee}{70}{subsection.a.D.80}
+\contentsline {section}{\numberline {E}Source code of PCB software}{70}{Appendix.a.E}
+\contentsline {section}{\numberline {F}Source code of Node}{77}{Appendix.a.F}
+\contentsline {section}{\numberline {G}PCB schematic}{79}{Appendix.a.G}
+\contentsline {section}{\numberline {H}PCB Top layer}{80}{Appendix.a.H}
+\contentsline {section}{\numberline {I}PCB Bottom layer}{81}{Appendix.a.I}
+\contentsline {section}{\numberline {J}Poster}{82}{Appendix.a.J}
+\contentsline {section}{\numberline {K}BOM}{82}{Appendix.a.K}
