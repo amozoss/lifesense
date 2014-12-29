@@ -1,4 +1,4 @@
-App.TransmittersTransmitterController = Ember.Controller.extend
+App.TransmittersTransmitterController = App.SocketController.extend
   showUnsavedMessage: ( ->
     @get('model.isDirty') and !@get('model.isSaving')
   ).property('model.isDirty', 'model.isSaving')
@@ -10,3 +10,4 @@ App.TransmittersTransmitterController = Ember.Controller.extend
 
     saveChanges: ->
       @get('model').save() if @get('model.isDirty')
+

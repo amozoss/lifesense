@@ -1,6 +1,6 @@
 class Api::V2::RecordsController < ApplicationController
   respond_to :json
-  before_action :authenticate
+  before_action :authenticate, except: [:create]
   skip_before_filter :verify_authenticity_token
 
   def show
@@ -8,25 +8,66 @@ class Api::V2::RecordsController < ApplicationController
   end
 
   def create
-		# TODO send error messages
-    transmitter = @current_user.transmitters.find_by(transmitter_token: record_params["transmitter_token"]) if @current_user 
+    # TODO send error messages
+    puts "*********************************************"
+    puts record_params
+    transmitter = Transmitter.find_by(transmitter_token: record_params["transmitter_token"]) 
+    user = User.where(id: transmitter.user_id).first
 
-    sensor = @current_user.sensors.find_by(transmitter: transmitter, pin_number: record_params["pin_number"]) if transmitter
-    @record = sensor.records.build(time_stamp: DateTime.now.to_i * 1000, value: record_params["value"])
-    @record.save
+    pin_number = transmitter.pin_numbers.find_by(name: record_params["pin_number"])
+    sensor = pin_number.sensor if pin_number
+    puts sensor
+
+    if sensor
+      @record = sensor.records.build(x: DateTime.now.to_i * 1000, y: record_params["y"])
+      if @record.save
+
+        # only send email if lower is a valid number
+        if sensor.lower && (sensor.lower.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true)
+          # evaluate sensor formula
+          calculator = Dentaku::Calculator.new
+          if sensor.formula
+            formula_value = calculator.evaluate(sensor.formula, x: @record.y)
+          else
+            formula_value = calculator.evaluate("x", x: @record.y)
+          end
+
+          # Send email if formula_value is below sensor lower value
+          if formula_value && formula_value < sensor.lower.to_f
+            RecordMailer.send_record(user, @record, sensor).deliver
+          end
+        end
+
+        # only send email if upper is a valid number
+        if sensor.upper && (sensor.upper.match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true)
+          # evaluate sensor formula
+          calculator = Dentaku::Calculator.new
+          if sensor.formula
+            formula_value = calculator.evaluate(sensor.formula, x: @record.y)
+          else
+            formula_value = calculator.evaluate("x", x: @record.y)
+          end
+
+          # Send email if formula_value is above sensor upper value
+          if formula_value && formula_value > sensor.upper.to_f
+            RecordMailer.send_record(user, @record, sensor).deliver
+          end
+        end
+      end
+    end
 
     respond_with :api, status: :created, json: @record
   end
 
-	def update
-		respond_with record.update(transmitter_params)
-	end
+  def update
+    respond_with record.update(transmitter_params)
+  end
 
   def destroy
     respond_with record.destroy
   end
 
-  private 
+  private
 
   def record
     Record.find(params[:id])
@@ -37,7 +78,7 @@ class Api::V2::RecordsController < ApplicationController
     params.require(:record).require(:transmitter_token)
     params.require(:record).require(:pin_number)
     # setup for hash structure
-    params.require(:record).permit(:value, :time_stamp, :transmitter_token, :pin_number)
+    params.require(:record).permit(:y, :x, :transmitter_token, :pin_number)
   end
 
 end

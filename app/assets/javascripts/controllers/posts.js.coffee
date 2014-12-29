@@ -7,6 +7,13 @@ App.PostsController = Ember.ArrayController.extend
 
   isAdmin: Ember.computed.alias('controllers.application.isAdmin')
 
+  height: (->
+    if window.mobilecheck()
+      return 100
+    else 
+      return 500
+  )()
+
   setupTags: ->
     tags = @store.all('tag')
     @set('tags', tags)

@@ -3,13 +3,24 @@ App.SensorsSensorController = Ember.Controller.extend
 
   theFormula: null
   data: null
+  frequencyPeriods: null
   transmitters: null
   transmitter: null
   pinNumbers: null
   pinNumber: null
+  record: null
 
-  # emberdata doesn't track dirt on relationships 
-  isRelationDirty: false  
+
+
+  isLED: Ember.computed.alias('model.led')
+  
+  # emberdata doesn't track dirt on relationships
+  isRelationDirty: false
+
+  getFrequencyPeriods: ->
+    @store.find('frequency_period').then (frequencyPeriods)=>
+      console.log frequencyPeriods
+      @set('frequencyPeriods', frequencyPeriods.content)
 
   getTransmitters: ->
     userid = @get('controllers.application.currentUser').id
@@ -40,7 +51,7 @@ App.SensorsSensorController = Ember.Controller.extend
     @get('model.records').then ((records)=>
       data = []
       for record in records.content
-        value = record.get('value')
+        value = record.get('y')
 
         scope = { x : value }
         calculated_value = null
@@ -50,10 +61,13 @@ App.SensorsSensorController = Ember.Controller.extend
         catch
           calculated_value = value
 
-        data.push([record.get('time_stamp'), calculated_value])
+        time = record.get 'x'
+        data.push({x:time,y: calculated_value})
+
       @set('data', data)
+#
     )
-  ).observes('theFormula')
+  ).observes('theFormula', 'record')
 
   showUnsavedMessage: ( ->
     !@get('model.isSaving') and (@get('model.isDirty') or @get('isRelationDirty'))
@@ -70,5 +84,21 @@ App.SensorsSensorController = Ember.Controller.extend
         @get('model').save().then =>
           @set('isRelationDirty', false)
           @set('theFormula', @get('model.formula'))
+    
+    led: (isChecked)->
+      @set('model.led', isChecked)
 
-        
+  sockets: 
+    test: (data) ->
+      data = data.record
+
+      @store.find('sensor', data.sensor_id).then (sensor)=>
+        record = {
+          sensor: sensor
+          time_stamp: (new Date).getTime()
+          value: data.value
+        }
+        #@store.push('record', record)
+        console.log(record)
+        if @get('model').id == sensor.id
+          @set('record', record)

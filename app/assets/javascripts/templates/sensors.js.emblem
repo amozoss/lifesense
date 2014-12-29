@@ -1,10 +1,13 @@
-.row
-  .col-xs-3
-    link-to "sensors.new" classNames="new btn btn-primary" | New Sensor 
-    br
-    .list-group
-      collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
-        link-to 'sensors.sensor' content classNames="list-group-item"
-          name
-  .col-xs-9
-    outlet
+.container
+  .row
+    .col-sm-4
+      link-to "sensors.new" classNames="new btn btn-primary" | New Sensor 
+      br
+      p (Transmitter id:Pin name) sensor
+        
+      .list-group
+        collection Ember.ListView contentBinding="controller" height=height rowHeight=1
+          link-to 'sensors.sensor' content classNames="list-group-item"
+            trans-sensor pin_number.transmitter.id pin_number.name name
+    .col-sm-8
+      outlet

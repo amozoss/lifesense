@@ -17,9 +17,10 @@ App.Router.map ()->
       @route 'new'
 
   @resource 'user', path: '/', ->
-			@resource 'transmitters', ->
-				@route 'transmitter', path: "/:transmitter_id"
-				@route 'new'
-			@resource 'sensors', ->
-				@route 'new'
-				@route 'sensor', path: "/:sensor_id"
+    @resource 'transmitters', ->
+      @route 'transmitter', path: "/:transmitter_id"
+      @route 'new'
+    @resource 'sensors', ->
+      @route 'new'
+      @route 'sensor', path: "/:sensor_id"
+    @route 'live'

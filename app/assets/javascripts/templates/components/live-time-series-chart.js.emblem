@@ -1,0 +1,9 @@
+div id=chartId style='width 100%'
+if sensor
+  .col-xs-6
+    a.btn.btn-primary click="recordValue" Record
+  /.col-xs-6
+    link-to 'user.sensors.sensor' sensor
+      
+
+

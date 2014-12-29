@@ -7,9 +7,22 @@ gem 'rails', '4.1.6'
 gem 'ember-rails'
 gem 'ember-source'
 gem 'emblem-rails' # contains active_model_serializers
+gem 'socket.io-rails'
 gem 'ffaker'
 gem 'puma'
 gem 'bcrypt',      '3.1.7'
+gem 'clockwork'
+gem 'curb'
+
+# For debugging
+gem 'pry'
+
+# For evaluting formula's serverside
+gem 'dentaku', '~> 1.2.1'
+
+# For email
+gem "letter_opener", :group => :development
+gem 'figaro'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -28,12 +41,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #Assets
 gem 'rails-assets-jquery.cookie'
-gem 'rails-assets-ember-localstorage-adapter'
 gem 'rails-assets-ember-list-view'
 gem 'rails-assets-highcharts'
 gem 'rails-assets-mathjs'
 gem 'rails-assets-moment'
 gem 'rails-assets-marked'
+gem 'rails-assets-bootstrap-switch'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do

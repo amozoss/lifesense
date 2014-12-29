@@ -21,6 +21,7 @@ App.SensorSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
     records: { embedded: 'always' }
     pin_number: { embedded: 'always' }
+    clockwork_database_event: { embedded: 'always' }
   }
 })
 
@@ -30,13 +31,24 @@ App.TransmitterSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   }
 })
 
+App.ClockworkDatabaseEventSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
+  attrs: {
+    frequency_period: { embedded: 'always' }
+  }
+})
+
 App.PostSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
     tag: { embedded: 'always' }
   }
 })
 
+Ember.View.reopen({
+  didInsertElement: ->
+    @_super()
+    Ember.run.scheduleOnce "afterRender", @, @afterRenderEvent
+    return
 
-App.ApiKeyAdapter = DS.LSAdapter.extend
-  namespace: 'lifesense-keys'
+  afterRenderEvent: ->
+})
 

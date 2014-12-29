@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+pdflatex -shell-escape report.tex
+#bibtex report
+pdflatex -shell-escape report.tex
+#pdflatex report.tex
+evince report.pdf
+

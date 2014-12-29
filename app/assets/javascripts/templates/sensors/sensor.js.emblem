@@ -1,4 +1,5 @@
-line-time-series-chart chartId='sensed' title=model.name data=data formula=theFormula
+unless isLED
+  line-time-series-chart chartId='sensed' title=model.name data=data formula=theFormula record=record
 
 p
   label Name:
@@ -7,24 +8,41 @@ p
   label Transmitter:
   view Ember.Select content=transmitters optionValuePath="content" optionLabelPath="content.name" selection=transmitter value=transmitter prompt="-"
 
-  label Pin Number:
+  label Pin Name:
   view Ember.Select content=pinNumbers optionValuePath="content" optionLabelPath="content.name" value=model.pin_number selection=pinNumber prompt="-"
 
-  label Formula: 
-  view Ember.TextField value=model.formula
+  bootstrap-switch-led isLED=model.led action="led" labelText="Output" size="medium"
+  br
 
-a.delete.btn.btn-primary click="delete" Delete 
-a.btn.btn-primary click="saveChanges" Save 
+
+  unless isLED
+    label Formula:
+    view Ember.TextField value=model.formula
+
+    label Frequency Quantity:
+    view Ember.TextField value=model.clockwork_database_event.frequency_quantity
+
+    label Frequency Period:
+    view Ember.Select content=frequencyPeriods optionValuePath="content" optionLabelPath="content.name" value=model.clockwork_database_event.frequency_period selection=model.clockwork_database_event.frequency_period prompt="-"
+
+    label Lower Bound:
+    view Ember.TextField value=model.lower
+
+    label Upper Bound:
+    view Ember.TextField value=model.upper
+
+a.delete.btn.btn-primary click="delete" Delete
+a.btn.btn-primary click="saveChanges" Save
 if showUnsavedMessage
   .unsaved unsaved changes
 if model.isSaving
   .saving saving...
 
-br 
 br
-   
+br
 
-.table-responsive
+
+/.table-responsive
   table.table.table-striped.table-bordered.table-hover.table-condensed
     thead
       tr

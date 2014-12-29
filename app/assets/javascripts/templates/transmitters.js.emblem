@@ -1,10 +1,11 @@
-.row
-  .col-xs-3
-    link-to "transmitters.new" classNames="new btn btn-primary" | New Transmitter
-    br
-    .list-group
-      collection Ember.ListView contentBinding="controller" height=500 rowHeight=1
-        link-to 'transmitters.transmitter' content classNames="list-group-item"
-          name
-  .col-xs-9
-    outlet
+.container 
+  .row
+    .col-sm-3
+      link-to "transmitters.new" classNames="new btn btn-primary" | New Transmitter
+      br
+      .list-group
+        collection Ember.ListView contentBinding="controller" height=height rowHeight=1
+          link-to 'transmitters.transmitter' content classNames="list-group-item"
+            name
+    .col-sm-9
+      outlet

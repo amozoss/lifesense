@@ -1,0 +1,138 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background}{}% 2
+\BOOKMARK [1][-]{section.3}{Project Implementation}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Printed Circuit Board}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Ruby on Rails}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Ember}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Node}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Evaluation}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Printed Circuit Board}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Ruby on Rails}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{Ember}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.4}{Node}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 13
+\BOOKMARK [1][-]{Appendix.a.A}{Tutorials}{}% 14
+\BOOKMARK [1][-]{Appendix.a.B}{Discoveries and pitfalls}{}% 15
+\BOOKMARK [1][-]{Appendix.a.C}{Ruby on Rails Source Code}{}% 16
+\BOOKMARK [2][-]{subsection.a.C.1}{Gemfile}{Appendix.a.C}% 17
+\BOOKMARK [2][-]{subsection.a.C.2}{app/controllers/application\137controller.rb}{Appendix.a.C}% 18
+\BOOKMARK [2][-]{subsection.a.C.3}{app/controllers/api/v2/frequency\137periods\137controller.rb}{Appendix.a.C}% 19
+\BOOKMARK [2][-]{subsection.a.C.4}{app/controllers/api/v2/posts\137controller.rb}{Appendix.a.C}% 20
+\BOOKMARK [2][-]{subsection.a.C.5}{app/controllers/api/v2/records\137controller.rb}{Appendix.a.C}% 21
+\BOOKMARK [2][-]{subsection.a.C.6}{app/controllers/api/v2/sensors\137controller.rb}{Appendix.a.C}% 22
+\BOOKMARK [2][-]{subsection.a.C.7}{app/controllers/api/v2/tags\137controller.rb}{Appendix.a.C}% 23
+\BOOKMARK [2][-]{subsection.a.C.8}{app/controllers/api/v2/transmitters\137controller.rb}{Appendix.a.C}% 24
+\BOOKMARK [2][-]{subsection.a.C.9}{app/controllers/api/v2/users\137controller.rb}{Appendix.a.C}% 25
+\BOOKMARK [2][-]{subsection.a.C.10}{app/constraints/api\137constraint.rb}{Appendix.a.C}% 26
+\BOOKMARK [2][-]{subsection.a.C.11}{app/mailers/record\137mailer.rb}{Appendix.a.C}% 27
+\BOOKMARK [2][-]{subsection.a.C.12}{app/models/clockwork\137database\137event.rb}{Appendix.a.C}% 28
+\BOOKMARK [2][-]{subsection.a.C.13}{app/models/frequency\137period.rb}{Appendix.a.C}% 29
+\BOOKMARK [2][-]{subsection.a.C.14}{app/models/pin\137number.rb}{Appendix.a.C}% 30
+\BOOKMARK [2][-]{subsection.a.C.15}{app/models/post.rb}{Appendix.a.C}% 31
+\BOOKMARK [2][-]{subsection.a.C.16}{app/models/record.rb}{Appendix.a.C}% 32
+\BOOKMARK [2][-]{subsection.a.C.17}{app/models/sensor.rb}{Appendix.a.C}% 33
+\BOOKMARK [2][-]{subsection.a.C.18}{app/models/tag.rb}{Appendix.a.C}% 34
+\BOOKMARK [2][-]{subsection.a.C.19}{app/models/transmitter.rb}{Appendix.a.C}% 35
+\BOOKMARK [2][-]{subsection.a.C.20}{app/models/user.rb}{Appendix.a.C}% 36
+\BOOKMARK [2][-]{subsection.a.C.21}{app/serializers/clockwork\137database\137event\137serializer.rb}{Appendix.a.C}% 37
+\BOOKMARK [2][-]{subsection.a.C.22}{app/serializers/frequency\137period\137serializer.rb}{Appendix.a.C}% 38
+\BOOKMARK [2][-]{subsection.a.C.23}{app/serializers/pin\137number\137serializer.rb}{Appendix.a.C}% 39
+\BOOKMARK [2][-]{subsection.a.C.24}{app/serializers/post\137serializer.rb}{Appendix.a.C}% 40
+\BOOKMARK [2][-]{subsection.a.C.25}{app/serializers/record\137serializer.rb}{Appendix.a.C}% 41
+\BOOKMARK [2][-]{subsection.a.C.26}{app/serializers/sensor\137serializer.rb}{Appendix.a.C}% 42
+\BOOKMARK [2][-]{subsection.a.C.27}{app/serializers/tag\137serializer.rb}{Appendix.a.C}% 43
+\BOOKMARK [2][-]{subsection.a.C.28}{app/serializers/transmitter\137serializer.rb}{Appendix.a.C}% 44
+\BOOKMARK [2][-]{subsection.a.C.29}{app/serializers/user\137serializer.rb}{Appendix.a.C}% 45
+\BOOKMARK [2][-]{subsection.a.C.30}{config/routes.rb}{Appendix.a.C}% 46
+\BOOKMARK [2][-]{subsection.a.C.31}{config/routes.rb}{Appendix.a.C}% 47
+\BOOKMARK [2][-]{subsection.a.C.32}{config/environment.rb}{Appendix.a.C}% 48
+\BOOKMARK [2][-]{subsection.a.C.33}{db/schema.rb}{Appendix.a.C}% 49
+\BOOKMARK [2][-]{subsection.a.C.34}{db/seeds.rb}{Appendix.a.C}% 50
+\BOOKMARK [1][-]{Appendix.a.D}{Source code of Ember}{}% 51
+\BOOKMARK [2][-]{subsection.a.D.1}{js/application.js.coffee}{Appendix.a.D}% 52
+\BOOKMARK [2][-]{subsection.a.D.2}{js/components/bootstrap-switch-led.js.coffee}{Appendix.a.D}% 53
+\BOOKMARK [2][-]{subsection.a.D.3}{js/components/line-time-series-chart.js.coffee}{Appendix.a.D}% 54
+\BOOKMARK [2][-]{subsection.a.D.4}{js/components/live-time-series-chart.js.coffee}{Appendix.a.D}% 55
+\BOOKMARK [2][-]{subsection.a.D.5}{js/controllers/application.js.coffee}{Appendix.a.D}% 56
+\BOOKMARK [2][-]{subsection.a.D.6}{js/controllers/home.js.coffee}{Appendix.a.D}% 57
+\BOOKMARK [2][-]{subsection.a.D.7}{js/controllers/login.js.coffee}{Appendix.a.D}% 58
+\BOOKMARK [2][-]{subsection.a.D.8}{js/controllers/posts.js.coffee}{Appendix.a.D}% 59
+\BOOKMARK [2][-]{subsection.a.D.9}{js/controllers/posts\137new.js.coffee}{Appendix.a.D}% 60
+\BOOKMARK [2][-]{subsection.a.D.10}{js/controllers/posts\137post\137edit.js.coffee}{Appendix.a.D}% 61
+\BOOKMARK [2][-]{subsection.a.D.11}{js/controllers/posts\137post.js.coffee}{Appendix.a.D}% 62
+\BOOKMARK [2][-]{subsection.a.D.12}{js/controllers/sensors.js.coffee}{Appendix.a.D}% 63
+\BOOKMARK [2][-]{subsection.a.D.13}{js/controllers/sensors\137new.js.coffee}{Appendix.a.D}% 64
+\BOOKMARK [2][-]{subsection.a.D.14}{js/controllers/sensors\137sensor.js.coffee}{Appendix.a.D}% 65
+\BOOKMARK [2][-]{subsection.a.D.15}{js/controllers/signup.js.coffee}{Appendix.a.D}% 66
+\BOOKMARK [2][-]{subsection.a.D.16}{js/controllers/socket.js.coffee}{Appendix.a.D}% 67
+\BOOKMARK [2][-]{subsection.a.D.17}{js/controllers/transmitters.js.coffee}{Appendix.a.D}% 68
+\BOOKMARK [2][-]{subsection.a.D.18}{js/controllers/transmitters\137new.js.coffee}{Appendix.a.D}% 69
+\BOOKMARK [2][-]{subsection.a.D.19}{js/controllers/transmitters\137transmitter.js.coffee}{Appendix.a.D}% 70
+\BOOKMARK [2][-]{subsection.a.D.20}{js/controllers/user.js.coffee}{Appendix.a.D}% 71
+\BOOKMARK [2][-]{subsection.a.D.21}{js/controllers/user\137live.js.coffee}{Appendix.a.D}% 72
+\BOOKMARK [2][-]{subsection.a.D.22}{js/controllers/user\137live\137transmitters.js.coffee}{Appendix.a.D}% 73
+\BOOKMARK [2][-]{subsection.a.D.23}{js/controllers/users.js.coffee}{Appendix.a.D}% 74
+\BOOKMARK [2][-]{subsection.a.D.24}{js/controllers/users\137new.js.coffee}{Appendix.a.D}% 75
+\BOOKMARK [2][-]{subsection.a.D.25}{js/helpers/format\137date.js.coffee}{Appendix.a.D}% 76
+\BOOKMARK [2][-]{subsection.a.D.26}{js/helpers/get\137element.js.coffee}{Appendix.a.D}% 77
+\BOOKMARK [2][-]{subsection.a.D.27}{js/helpers/markdown.js.coffee}{Appendix.a.D}% 78
+\BOOKMARK [2][-]{subsection.a.D.28}{js/helpers/sensor\137name.js.coffee}{Appendix.a.D}% 79
+\BOOKMARK [2][-]{subsection.a.D.29}{js/models/clockwork\137database\137event.js.coffee}{Appendix.a.D}% 80
+\BOOKMARK [2][-]{subsection.a.D.30}{js/models/frequency\137period}{Appendix.a.D}% 81
+\BOOKMARK [2][-]{subsection.a.D.31}{js/models/pin\137number}{Appendix.a.D}% 82
+\BOOKMARK [2][-]{subsection.a.D.32}{js/models/post.js.coffee}{Appendix.a.D}% 83
+\BOOKMARK [2][-]{subsection.a.D.33}{js/models/record.js.coffee}{Appendix.a.D}% 84
+\BOOKMARK [2][-]{subsection.a.D.34}{js/models/sensor.js.coffee}{Appendix.a.D}% 85
+\BOOKMARK [2][-]{subsection.a.D.35}{js/models/tag.js.coffee}{Appendix.a.D}% 86
+\BOOKMARK [2][-]{subsection.a.D.36}{js/models/transmitter.js.coffee}{Appendix.a.D}% 87
+\BOOKMARK [2][-]{subsection.a.D.37}{js/models/user.js.coffee}{Appendix.a.D}% 88
+\BOOKMARK [2][-]{subsection.a.D.38}{js/models/router.js.coffee}{Appendix.a.D}% 89
+\BOOKMARK [2][-]{subsection.a.D.39}{js/routes/application.js.coffee}{Appendix.a.D}% 90
+\BOOKMARK [2][-]{subsection.a.D.40}{js/routes/posts\137new.js.coffee}{Appendix.a.D}% 91
+\BOOKMARK [2][-]{subsection.a.D.41}{js/routes/transmitters\137transmitter.js.coffee}{Appendix.a.D}% 92
+\BOOKMARK [2][-]{subsection.a.D.42}{js/routes/authenticated.js.coffee}{Appendix.a.D}% 93
+\BOOKMARK [2][-]{subsection.a.D.43}{js/routes/posts\137post\137edit.js.coffee}{Appendix.a.D}% 94
+\BOOKMARK [2][-]{subsection.a.D.44}{js/routes/user.js.coffee}{Appendix.a.D}% 95
+\BOOKMARK [2][-]{subsection.a.D.45}{js/routes/home.js.coffee}{Appendix.a.D}% 96
+\BOOKMARK [2][-]{subsection.a.D.46}{js/routes/sensors.js.coffee}{Appendix.a.D}% 97
+\BOOKMARK [2][-]{subsection.a.D.47}{js/routes/user\137live.js.coffee}{Appendix.a.D}% 98
+\BOOKMARK [2][-]{subsection.a.D.48}{js/routes/login.js.coffee}{Appendix.a.D}% 99
+\BOOKMARK [2][-]{subsection.a.D.49}{js/routes/sensors\137sensor.js.coffee}{Appendix.a.D}% 100
+\BOOKMARK [2][-]{subsection.a.D.50}{js/routes/users.js.coffee}{Appendix.a.D}% 101
+\BOOKMARK [2][-]{subsection.a.D.51}{js/routes/posts.js.coffee}{Appendix.a.D}% 102
+\BOOKMARK [2][-]{subsection.a.D.52}{js/routes/transmitters.js.coffee}{Appendix.a.D}% 103
+\BOOKMARK [2][-]{subsection.a.D.53}{js/store.js.coffee}{Appendix.a.D}% 104
+\BOOKMARK [2][-]{subsection.a.D.54}{js/templates/application.js.emblem }{Appendix.a.D}% 105
+\BOOKMARK [2][-]{subsection.a.D.55}{js/templates/home.js.emblem}{Appendix.a.D}% 106
+\BOOKMARK [2][-]{subsection.a.D.56}{js/templates/posts.js.emblem}{Appendix.a.D}% 107
+\BOOKMARK [2][-]{subsection.a.D.57}{js/templates/blog.js.emblem}{Appendix.a.D}% 108
+\BOOKMARK [2][-]{subsection.a.D.58}{js/templates/components/bootstrap-switch-led.js.emblem}{Appendix.a.D}% 109
+\BOOKMARK [2][-]{subsection.a.D.59}{js/templates/components/line-time-series-chart.js.emblem}{Appendix.a.D}% 110
+\BOOKMARK [2][-]{subsection.a.D.60}{js/templates/components/live-time-series-chart.js.emblem}{Appendix.a.D}% 111
+\BOOKMARK [2][-]{subsection.a.D.61}{js/templates/loading.js.emblem}{Appendix.a.D}% 112
+\BOOKMARK [2][-]{subsection.a.D.62}{js/templates/transmitters.js.emblem}{Appendix.a.D}% 113
+\BOOKMARK [2][-]{subsection.a.D.63}{js/templates/users.js.emblem}{Appendix.a.D}% 114
+\BOOKMARK [2][-]{subsection.a.D.64}{js/templates/login.js.emblem}{Appendix.a.D}% 115
+\BOOKMARK [2][-]{subsection.a.D.65}{js/templates/sensors.js.emblem}{Appendix.a.D}% 116
+\BOOKMARK [2][-]{subsection.a.D.66}{js/templates/help.js.emblem}{Appendix.a.D}% 117
+\BOOKMARK [2][-]{subsection.a.D.67}{js/templates/signup.js.emblem}{Appendix.a.D}% 118
+\BOOKMARK [2][-]{subsection.a.D.68}{js/templates/user.js.emblem}{Appendix.a.D}% 119
+\BOOKMARK [2][-]{subsection.a.D.69}{js/templates/posts/post.js.emblem}{Appendix.a.D}% 120
+\BOOKMARK [2][-]{subsection.a.D.70}{js/templates/posts/new.js.emblem}{Appendix.a.D}% 121
+\BOOKMARK [2][-]{subsection.a.D.71}{js/templates/posts/post/edit.js.emblem}{Appendix.a.D}% 122
+\BOOKMARK [2][-]{subsection.a.D.72}{js/templates/sensors/new.js.emblem}{Appendix.a.D}% 123
+\BOOKMARK [2][-]{subsection.a.D.73}{js/templates/sensors/sensor.js.emblem}{Appendix.a.D}% 124
+\BOOKMARK [2][-]{subsection.a.D.74}{js/templates/transmitters/new.js.emblem}{Appendix.a.D}% 125
+\BOOKMARK [2][-]{subsection.a.D.75}{js/templates/transmitters/transmitter.js.emblem}{Appendix.a.D}% 126
+\BOOKMARK [2][-]{subsection.a.D.76}{js/templates/user/live.js.emblem}{Appendix.a.D}% 127
+\BOOKMARK [2][-]{subsection.a.D.77}{js/templates/user/sensors.js.emblem}{Appendix.a.D}% 128
+\BOOKMARK [2][-]{subsection.a.D.78}{js/templates/users/new.js.emblem}{Appendix.a.D}% 129
+\BOOKMARK [2][-]{subsection.a.D.79}{js/templates/views/bootstrap-switch.js.emblem}{Appendix.a.D}% 130
+\BOOKMARK [2][-]{subsection.a.D.80}{js/views/bootstrap\137switch.js.coffee}{Appendix.a.D}% 131
+\BOOKMARK [1][-]{Appendix.a.E}{Source code of PCB software}{}% 132
+\BOOKMARK [1][-]{Appendix.a.F}{Source code of Node}{}% 133
+\BOOKMARK [1][-]{Appendix.a.G}{PCB schematic}{}% 134
+\BOOKMARK [1][-]{Appendix.a.H}{PCB Top layer}{}% 135
+\BOOKMARK [1][-]{Appendix.a.I}{PCB Bottom layer}{}% 136
+\BOOKMARK [1][-]{Appendix.a.J}{Poster}{}% 137
+\BOOKMARK [1][-]{Appendix.a.K}{BOM}{}% 138

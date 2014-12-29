@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :records, except: [:index]
       resources :posts
       resources :tags
+      resources :frequency_periods
       post 'login'  => 'users#login'
       post 'signup'  => 'users#create'
     end
